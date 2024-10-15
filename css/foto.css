@@ -1,0 +1,157 @@
+/* Algemene stijlen */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #f4f4f4;
+    min-height: 100vh; /* Zorg ervoor dat de body ten minste de volledige hoogte van het scherm heeft */
+    display: flex;
+    flex-direction: column; /* Gebruik flexbox om de elementen binnen de body te positioneren */
+}
+
+/* Stijlen voor de header */
+header {
+    background-color: #333;  /* Donkere header */
+    color: white;
+    padding: 20px;  /* Maak de header iets hoger door extra padding */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* Zorg ervoor dat logo links en navigatie rechts staat */
+    height: 70px; /* Verhoog de hoogte van de header zodat deze hoger is dan het logo */
+}
+
+/* Logo-container */
+.logo {
+    display: flex;
+    align-items: center; /* Verticaal centreren van het logo in de header */
+    justify-content: center; /* Horizontaal centreren van het logo in de header */
+    margin-left: 20px; /* Voeg marge toe indien gewenst voor wat extra ruimte van de rand */
+}
+
+/* Logo-stijlen */
+.logo-img {
+    max-width: 90px;  /* Grootte van het logo (100px) */
+    height: auto;
+}
+
+/* Navigatiebalk */
+nav {
+    display: flex;
+    justify-content: center; /* Centraal uitlijnen van de navigatie */
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Tabs horizontaal uitlijnen */
+    justify-content: center; /* Tabs in het midden van de header */
+    align-items: center; /* Zorgt ervoor dat de tabs verticaal gecentreerd zijn binnen de header */
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;  /* Tabs groter maken */
+    padding: 10px 15px;  /* Voeg padding toe rond de tabs */
+    border-radius: 5px;  /* Maak de randen van de tabs iets afgerond */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    background-color: #555;  /* Achtergrondkleur bij hover */
+}
+
+/* Stijlen voor de rest van de pagina */
+main {
+    padding: 0;
+    text-align: center;
+    flex: 1; /* Zorgt ervoor dat het hoofdgedeelte de beschikbare ruimte opvult */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: static; /* Zorgt ervoor dat de footer altijd onderaan staat, maar niet vast is aan de viewport */
+    bottom: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    text-align: left; /* Zorg ervoor dat de tekst links wordt uitgelijnd */
+    margin-bottom: 20px;
+    gap: 40px;
+}
+
+.footer-column {
+    width: 25%;
+    text-align: left; /* Wijzig text-align naar left zodat de tekst links begint */
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left; /* Ook de koppen links uitlijnen */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    text-align: left; /* Lijsten links uitlijnen */
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #f4f4f4;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-column p {
+    margin: 0;
+    text-align: left; /* Ook de contactinformatie centreren */
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+a {
+    color: #f4f4f4;
+}
+
+a:hover {
+    color: #ddd;
+    text-decoration: underline;
+}
+
+.social-icon {
+    width: 20px; /* Behoud de grootte van het icoon */
+    height: auto;
+    margin-right: 8px; /* Ruimte tussen het icoon en de tekst */
+    vertical-align: middle;
+}
+/*#######################################################################################""
+VASTE WAARDEN
+/*#######################################################################################""*/
+
+
