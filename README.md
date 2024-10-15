@@ -1,2 +1,2 @@
 # Fc-De-Floppers
-Site voor mijn eigen minivoetbal team
+prototype site voor mijn eigen minivoetbal team
