@@ -10,69 +10,123 @@ body {
     flex-direction: column; /* Gebruik flexbox om de elementen binnen de body te positioneren */
 }
 
-/* Stijlen voor de header */
 header {
-    background-color: #333;  /* Donkere header */
-    color: white;
-    padding: 20px;  /* Maak de header iets hoger door extra padding */
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Zorg ervoor dat de header vast blijft */
+    top: 0; /* Plaats de header aan de bovenkant */
+    left: 0; /* Zorg ervoor dat de header links begint */
+    right: 0; /* Zorg ervoor dat de header naar rechts uitstrekt */
+    z-index: 1000; /* Zorg ervoor dat de header boven andere elementen staat */
+}
+
+/* Top white section with lighter color */
+.header-top {
+    background-color: #f0f0f0;
+    height: 25px;
+    width: 100%;
+    z-index: 1; /* Ensure it's on top */
+}
+
+.header-bottom {
+    background-color: black;
     display: flex;
     align-items: center;
-    justify-content: space-between;  /* Zorg ervoor dat logo links en navigatie rechts staat */
-    height: 70px; /* Verhoog de hoogte van de header zodat deze hoger is dan het logo */
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 50px;
+    position: relative;
+    border-bottom: 1px solid gray;
 }
 
 /* Logo-container */
+/* Logo styling to place it on both white and black sections */
 .logo {
-    display: flex;
-    align-items: center; /* Verticaal centreren van het logo in de header */
-    justify-content: center; /* Horizontaal centreren van het logo in de header */
-    margin-left: 20px; /* Voeg marge toe indien gewenst voor wat extra ruimte van de rand */
+    position: absolute; /* Zorgt ervoor dat het logo vrij kan bewegen binnen de header */
+    top: -25px; /* Verhoogt de positie van het logo (verander dit indien nodig) */
+    left: 40px; /* Houdt het logo aan de linkerzijde */
+    z-index: 10; /* Zorgt ervoor dat het logo boven andere elementen staat */
 }
 
-/* Logo-stijlen */
 .logo-img {
-    max-width: 90px;  /* Grootte van het logo (100px) */
+    max-width: 80px; /* Adjust size to your preference */
     height: auto;
 }
 
-/* Navigatiebalk */
-nav {
-    display: flex;
-    justify-content: center; /* Centraal uitlijnen van de navigatie */
-    flex-grow: 1;
+.team-name {
+    color: white; /* Witte kleur voor de tekst */
+    font-size: 30px; /* Pas de lettergrootte aan indien nodig */
+    margin-left: 20px; /* Ruimte tussen logo en tekst */
+    padding-left: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* Navigation bar styling */
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: 160px;
+    height: 100%; /* Zorg dat de navigatie de volledige hoogte van de header vult */
+}
+
+/* Navigation bar styling */
 nav ul {
+    display: flex;
+    height: 100%; /* Zorg ervoor dat de ul de volledige hoogte vult */
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Tabs horizontaal uitlijnen */
-    justify-content: center; /* Tabs in het midden van de header */
-    align-items: center; /* Zorgt ervoor dat de tabs verticaal gecentreerd zijn binnen de header */
+    border-left: 1px solid gray; /* Voeg deze regel toe */
 }
 
+/* Zorg ervoor dat elk item de volledige hoogte van de header vult en horizontaal verdeeld is */
 nav ul li {
-    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Zorg dat de li's de volledige hoogte van de header vullen */
+    border-left: 1px solid gray;
 }
 
 nav ul li a {
-    color: #f4f4f4;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 25px;  /* Tabs groter maken */
-    padding: 10px 15px;  /* Voeg padding toe rond de tabs */
-    border-radius: 5px;  /* Maak de randen van de tabs iets afgerond */
+    padding: 0 20px;
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Verticaal centreren van de tekst */
+    height: 100%; /* Zorg ervoor dat de links de volledige hoogte vullen */
+    box-sizing: border-box; /* Zorg ervoor dat borders en padding correct worden berekend */
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
-    background-color: #555;  /* Achtergrondkleur bij hover */
+/* Verwijder de border bij het eerste item */
+nav ul li:first-child {
+    border-left: none;
 }
+
+/* Voeg een rechter border toe aan het laatste item */
+nav ul li:last-child {
+    border-right: 1px solid white;
+}
+
+/* Hover-effect voor navigatie-items */
+nav ul li a:hover {
+    background-color: #555; /* Grijze achtergrondkleur bij hover */
+    transition: background-color 0.3s ease;
+}
+
+/* Ensure items are evenly spaced and aligned */
+nav ul li {
+    margin: 0;
+}
+
 
 /* Hero afbeelding - gestrekt over de volledige breedte zonder bijsnijden */
 .hero-image {
     overflow: hidden; /* Zorg ervoor dat bijsnijden plaatsvindt */
-    height: calc(90vh); /* Geef een vaste hoogte aan de hero afbeelding, inclusief de 60px voor bijsnijden */
+    height: calc(110vh); /* Geef een vaste hoogte aan de hero afbeelding, inclusief de 60px voor bijsnijden */
     position: relative; /* Maak het mogelijk om de afbeelding te positioneren binnen deze container */
 }
 
@@ -95,6 +149,8 @@ main {
     text-align: center;
     flex: 1; /* Zorgt ervoor dat het hoofdgedeelte de beschikbare ruimte opvult */
 }
+
+
 
 footer {
     background-color: #333;

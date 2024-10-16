@@ -8,19 +8,23 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="images/logo.png" alt="Minivoetbalploeg Logo" class="logo-img">
+        <div class="header-top"></div>
+        <div class="header-bottom">
+            <div class="logo">
+                <img src="images/logo.png" alt="Minivoetbalploeg Logo" class="logo-img">
+            </div>
+            <div class="team-name">Fc De Floppers</div>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/html/DeFloppers.html">De Floppers</a></li>
+                    <li><a href="/html/Wedstrijden.html">Wedstrijden</a></li>
+                    <li><a href="/html/Shop.html">Shop</a></li>
+                    <li><a href="/html/Foto's.html">Foto's</a></li>
+                    <li><a href="/html/contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/html/DeFloppers.html">De Floppers</a></li>
-                <li><a href="/html/Wedstrijden.html">Wedstrijden</a></li>
-                <li><a href="/html/Shop.html">Shop</a></li>
-                <li><a href="/html/Foto's.html">Foto's</a></li>
-                <li><a href="/html/contact.html">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
@@ -31,7 +35,7 @@
         </div>
         <div class="wedstrijd-container">
             <div class="image-left">
-                <img src="images/vis.png" alt="goldfish">
+                <img src="images/spiegelvis.png" alt="goldfish">
             </div>
             <div class="wedstrijd-box">
                 <h2>Volgende wedstrijd</h2>
@@ -54,7 +58,7 @@
                 </div>
             </div>
             <div class="image-right">
-                <img src="images/spiegelvis.png" alt="goldfish">
+                <img src="images/vis.png" alt="goldfish">
             </div>
         </div>
         <section id="team-info">
@@ -101,15 +105,15 @@
         const images = [
             {
                 src: 'images/homepage.jpeg',
-                crop: { top: '-120px', bottom: '-30px' } // Bijsnijden voor deze afbeelding
+                crop: { top: '-45px', bottom: '-95px' } // Bijsnijden voor deze afbeelding
             },
             {
                 src: 'images/volgende.jpg',
-                crop: { top: '-300px', bottom: '-10px' } // Bijsnijden voor de volgende afbeelding
+                crop: { top: '-250px', bottom: '-60px' } // Bijsnijden voor de volgende afbeelding
             },
             {
                 src: 'images/vorige.jpg',
-                crop: { top: '-260px', bottom: '-50px' } // Bijsnijden voor de vorige afbeelding
+                crop: { top: '-190px', bottom: '-120px' } // Bijsnijden voor de vorige afbeelding
             }
         ];
 

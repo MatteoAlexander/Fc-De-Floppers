@@ -10,63 +10,137 @@ body {
     flex-direction: column; /* Gebruik flexbox om de elementen binnen de body te positioneren */
 }
 
-/* Stijlen voor de header */
 header {
-    background-color: #333;  /* Donkere header */
-    color: white;
-    padding: 20px;  /* Maak de header iets hoger door extra padding */
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Zorg ervoor dat de header vast blijft */
+    top: 0; /* Plaats de header aan de bovenkant */
+    left: 0; /* Zorg ervoor dat de header links begint */
+    right: 0; /* Zorg ervoor dat de header naar rechts uitstrekt */
+    z-index: 1000; /* Zorg ervoor dat de header boven andere elementen staat */
+}
+
+/* Top white section with lighter color */
+.header-top {
+    background-color: #f0f0f0;
+    height: 25px;
+    width: 100%;
+    z-index: 1; /* Ensure it's on top */
+}
+
+.header-bottom {
+    background-color: black;
     display: flex;
     align-items: center;
-    justify-content: space-between;  /* Zorg ervoor dat logo links en navigatie rechts staat */
-    height: 70px; /* Verhoog de hoogte van de header zodat deze hoger is dan het logo */
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 50px;
+    position: relative;
+    border-bottom: 1px solid gray;
 }
 
 /* Logo-container */
+/* Logo styling to place it on both white and black sections */
 .logo {
-    display: flex;
-    align-items: center; /* Verticaal centreren van het logo in de header */
-    justify-content: center; /* Horizontaal centreren van het logo in de header */
-    margin-left: 20px; /* Voeg marge toe indien gewenst voor wat extra ruimte van de rand */
+    position: absolute; /* Zorgt ervoor dat het logo vrij kan bewegen binnen de header */
+    top: -25px; /* Verhoogt de positie van het logo (verander dit indien nodig) */
+    left: 40px; /* Houdt het logo aan de linkerzijde */
+    z-index: 10; /* Zorgt ervoor dat het logo boven andere elementen staat */
 }
 
-/* Logo-stijlen */
 .logo-img {
-    max-width: 90px;  /* Grootte van het logo (100px) */
+    max-width: 80px; /* Adjust size to your preference */
     height: auto;
 }
 
-/* Navigatiebalk */
-nav {
-    display: flex;
-    justify-content: center; /* Centraal uitlijnen van de navigatie */
-    flex-grow: 1;
+.team-name {
+    color: white; /* Witte kleur voor de tekst */
+    font-size: 30px; /* Pas de lettergrootte aan indien nodig */
+    margin-left: 20px; /* Ruimte tussen logo en tekst */
+    padding-left: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* Navigation bar styling */
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: 160px;
+    height: 100%; /* Zorg dat de navigatie de volledige hoogte van de header vult */
+}
+
+/* Navigation bar styling */
 nav ul {
+    display: flex;
+    height: 100%; /* Zorg ervoor dat de ul de volledige hoogte vult */
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Tabs horizontaal uitlijnen */
-    justify-content: center; /* Tabs in het midden van de header */
-    align-items: center; /* Zorgt ervoor dat de tabs verticaal gecentreerd zijn binnen de header */
+    border-left: 1px solid gray; /* Voeg deze regel toe */
 }
 
+/* Zorg ervoor dat elk item de volledige hoogte van de header vult en horizontaal verdeeld is */
 nav ul li {
-    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Zorg dat de li's de volledige hoogte van de header vullen */
+    border-left: 1px solid gray;
 }
 
 nav ul li a {
-    color: #f4f4f4;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 25px;  /* Tabs groter maken */
-    padding: 10px 15px;  /* Voeg padding toe rond de tabs */
-    border-radius: 5px;  /* Maak de randen van de tabs iets afgerond */
+    padding: 0 20px;
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Verticaal centreren van de tekst */
+    height: 100%; /* Zorg ervoor dat de links de volledige hoogte vullen */
+    box-sizing: border-box; /* Zorg ervoor dat borders en padding correct worden berekend */
 }
 
+/* Verwijder de border bij het eerste item */
+nav ul li:first-child {
+    border-left: none;
+}
+
+/* Voeg een rechter border toe aan het laatste item */
+nav ul li:last-child {
+    border-right: 1px solid white;
+}
+
+/* Hover-effect voor navigatie-items */
 nav ul li a:hover {
-    text-decoration: underline;
-    background-color: #555;  /* Achtergrondkleur bij hover */
+    background-color: #555; /* Grijze achtergrondkleur bij hover */
+    transition: background-color 0.3s ease;
+}
+
+/* Ensure items are evenly spaced and aligned */
+nav ul li {
+    margin: 0;
+}
+
+
+/* Hero afbeelding - gestrekt over de volledige breedte zonder bijsnijden */
+.hero-image {
+    overflow: hidden; /* Zorg ervoor dat bijsnijden plaatsvindt */
+    height: calc(110vh); /* Geef een vaste hoogte aan de hero afbeelding, inclusief de 60px voor bijsnijden */
+    position: relative; /* Maak het mogelijk om de afbeelding te positioneren binnen deze container */
+}
+
+.hero-image img {
+    width: 100vw; /* De afbeelding neemt de volledige breedte van het scherm */
+    height: auto; /* Houdt de hoogte proportioneel */
+    object-fit: cover; /* Zorgt ervoor dat de afbeelding proportioneel wordt weergegeven */
+    display: block; /* Verwijder ongewenste witruimte onder de afbeelding */
+    margin: 0; /* Verwijder marges van de afbeelding */
+    padding: 0; /* Verwijder padding van de afbeelding */
+    position: absolute; /* Maak het mogelijk om de afbeelding te verplaatsen */
+    top: 0; /* Standaard top */
+    transition: opacity 0.5s ease; /* Voeg een overgang toe voor de opacity */
+    opacity: 0; /* Begin met een onzichtbare afbeelding */
 }
 
 /* Stijlen voor de rest van de pagina */
@@ -75,6 +149,8 @@ main {
     text-align: center;
     flex: 1; /* Zorgt ervoor dat het hoofdgedeelte de beschikbare ruimte opvult */
 }
+
+
 
 footer {
     background-color: #333;
@@ -150,6 +226,127 @@ a:hover {
     margin-right: 8px; /* Ruimte tussen het icoon en de tekst */
     vertical-align: middle;
 }
+
+/* Pijlen voor de afbeelding wisselaar */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px; /* Pas de grootte van de pijlen aan indien nodig */
+    color: white;
+    cursor: pointer;
+    user-select: none; /* Voorkomt dat de tekst wordt geselecteerd */
+    z-index: 1; /* Zorgt ervoor dat de pijlen boven de afbeelding staan */
+}
+
+.arrow.left {
+    left: 20px; /* Positie van de linkerpijl */
+}
+
+.arrow.right {
+    right: 20px; /* Positie van de rechterpijl */
+}
+
+/* Stijlen voor de wedstrijd-box */
+.wedstrijd-box {
+    flex: 1; /* Zorg ervoor dat de wedstrijd-box de resterende ruimte opvult */
+    background-color: #1e1e1e;
+    color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 550px;
+    border: 2px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-width: 150px;
+    height: 150px; /* Zorg voor een vaste hoogte voor alle teams zodat ze gelijk staan */
+}
+
+.team img {
+    max-width: 100px;  /* Beperk de maximale breedte van de afbeeldingen */
+    max-height: 100px; /* Beperk de maximale hoogte van de afbeeldingen */
+    object-fit: contain; /* Zorg dat de afbeelding proportioneel blijft */
+    margin-bottom: 10px; /* Wat ruimte tussen de afbeelding en de teamnaam */
+}
+
+.team-left{
+    margin-top: 30px;
+}
+
+.name-right{
+    margin-top: 10px;
+}
+
+.wedstrijd-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 150px; /* Zorg ervoor dat de team-container een vaste hoogte heeft */
+}
+
+.team-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* Vaste hoogte voor de teamnaam zodat ze altijd gelijk staan */
+}
+
+.vs {
+    font-size: 30px;
+    font-weight: bold;
+    color: #bbb;
+    margin: 0 20px;
+}
+
+.wedstrijd-info {
+    text-align: left;  /* Tekst uitlijnen naar links */
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.wedstrijd-info p {
+    margin: 5px 0;  /* Voeg wat marges toe tussen de regels */
+}
+
+.wedstrijd-info span {
+    color: #f4f4f4;  /* Rood voor speciale details zoals speeldag */
+}
+
+/* Stijlen voor de wedstrijd-container */
+.wedstrijd-container {
+    display: flex; /* Gebruik flexbox om de afbeeldingen en wedstrijd-box op een rij te zetten */
+    justify-content: center; /* Zorg ervoor dat alles in het midden staat */
+    align-items: center; /* Verticaal centreren van de inhoud */
+    gap: 40px; /* Voeg meer ruimte toe tussen de afbeeldingen en de wedstrijd-box */
+    margin-top: 40px; /* Voeg marge toe aan de bovenkant van de container voor wat ruimte */
+    max-width: 2000px; /* Maximaliseer de breedte van de container */
+    margin-left: auto; /* Center de container horizontaal */
+    margin-right: auto; /* Center de container horizontaal */
+}
+
+/* Aanpassingen voor de afbeeldingen aan de linker en rechterkant */
+.image-left, .image-right {
+    flex: 0 0 200px; /* Vergroot de flex-basis voor de zij-afbeeldingen */
+    text-align: center;
+}
+
+/* Aanpassingen voor de afbeeldingen zelf */
+.image-left img, .image-right img {
+    max-width: 300px; /* Verhoog de maximale breedte van de afbeeldingen */
+    max-height: 300px; /* Verhoog de maximale hoogte van de afbeeldingen */
+    width: auto; /* Behoud de verhoudingen van de afbeeldingen */
+    height: auto;
+    object-fit: contain; /* Zorg ervoor dat de afbeeldingen binnen de container blijven zonder vervormd te worden */
+}
+
 /*#######################################################################################""
 VASTE WAARDEN
 /*#######################################################################################""*/
