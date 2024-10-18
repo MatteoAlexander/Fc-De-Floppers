@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minivoetbalploeg</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -41,8 +44,8 @@
                 <h2>Volgende wedstrijd</h2>
                 <div class="wedstrijd-details">
                     <div class="team team-left">
-                        <img src="images/steakorchicken.jpg" alt="Steakorchicken Logo">
-                        <p class="team name-left">Steak Or Chicken's</p>
+                        <img src="images/toemetoch.png" alt="Toemetoch Logo">
+                        <p class="team name-left">Mvc Toemetoch</p>
                     </div>
                     <div class="vs">VS</div>
                     <div class="team team-right">
@@ -50,17 +53,42 @@
                         <p class="team name-right">Fc De Floppers</p>
                     </div>
                 </div>
+                <!-- <div class="wedstrijd-info">
+                    <p>Aftrap: 21u00</p>
+                    <p>Datum: 23 oktober</p>
+                    <p>Locatie: Sporthal Rozebroeken</p>
+                </div> -->
+                <!-- Dit is je countdown -->
+                <div class="countdown-timer">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">07</span>
+                        <span class="countdown-label">D</span>
+                    </div>
+                    <span class="separator">:</span> <!-- Scheidingsteken -->
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">18</span>
+                        <span class="countdown-label">U</span>
+                    </div>
+                    <span class="separator">:</span> <!-- Scheidingsteken -->
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">41</span>
+                        <span class="countdown-label">M</span>
+                    </div>
+                    <span class="separator">:</span> <!-- Scheidingsteken -->
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">49</span>
+                        <span class="countdown-label">S</span>
+                    </div>
+                </div>
                 <div class="wedstrijd-info">
-                    <p><span>Speeldag 4</span></p>
-                    <p>Aftrap: 22u00</p>
-                    <p>Datum: 17 oktober</p>
-                    <p>Locatie: Sporthal Mariakerke</p>
+                    <p>Afspraak 23 Oktober om 21u in Rozebroeken</p>
                 </div>
             </div>
             <div class="image-right">
                 <img src="images/vis.png" alt="goldfish">
             </div>
         </div>
+
         <section id="team-info">
             <h2>Welkom bij de GEZELLIGSTE, BESTE, SYMPATHIEKSTE, KNAPSTE,... Minivoetbalploeg van België en omstreken</h2>
             <p>Wij zijn een enthousiaste minivoetbalploeg met passie voor het spel. We spelen elke week een wedstrijd en genieten van de competitie.</p>
@@ -100,6 +128,9 @@
         </div>
         <p>&copy; Fc De Floppers Minivoetbalploeg Kern Gent. Alle rechten voorbehouden.</p>
     </footer>
+
+    <script src="countdown.js"></script> <!-- Dit is je scriptbestand voor de countdown -->
+    
     <script>
         let currentIndex = 0; // Huidige afbeelding index
         const images = [

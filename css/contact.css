@@ -211,11 +211,11 @@ footer p {
     color: #aaa;
 }
 
-a {
+footer a {
     color: #f4f4f4;
 }
 
-a:hover {
+footer a:hover {
     color: #ddd;
     text-decoration: underline;
 }
@@ -352,3 +352,34 @@ VASTE WAARDEN
 /*#######################################################################################""*/
 
 
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Aligns content to the left */
+}
+
+h1, h2 {
+    color: white; /* Een donkerdere kleur voor de koppen */
+    font-weight: bold;
+}
+
+.contact-info, .correspondent-info {
+    margin: 30px 0;
+}
+
+p {
+    line-height: 1.6;
+    color: white; /* Lichtere kleur voor de paragrafen */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}

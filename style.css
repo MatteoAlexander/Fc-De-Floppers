@@ -22,7 +22,7 @@ header {
 
 /* Top white section with lighter color */
 .header-top {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0ee;
     height: 25px;
     width: 100%;
     z-index: 1; /* Ensure it's on top */
@@ -40,7 +40,6 @@ header {
 }
 
 /* Logo-container */
-/* Logo styling to place it on both white and black sections */
 .logo {
     position: absolute; /* Zorgt ervoor dat het logo vrij kan bewegen binnen de header */
     top: -25px; /* Verhoogt de positie van het logo (verander dit indien nodig) */
@@ -49,7 +48,7 @@ header {
 }
 
 .logo-img {
-    max-width: 80px; /* Adjust size to your preference */
+    max-width: 80px; /* Pas de grootte aan indien nodig */
     height: auto;
 }
 
@@ -58,7 +57,9 @@ header {
     font-size: 30px; /* Pas de lettergrootte aan indien nodig */
     margin-left: 20px; /* Ruimte tussen logo en tekst */
     padding-left: 100px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 /* Navigation bar styling */
@@ -70,7 +71,6 @@ nav {
     height: 100%; /* Zorg dat de navigatie de volledige hoogte van de header vult */
 }
 
-/* Navigation bar styling */
 nav ul {
     display: flex;
     height: 100%; /* Zorg ervoor dat de ul de volledige hoogte vult */
@@ -99,6 +99,9 @@ nav ul li a {
     align-items: center; /* Verticaal centreren van de tekst */
     height: 100%; /* Zorg ervoor dat de links de volledige hoogte vullen */
     box-sizing: border-box; /* Zorg ervoor dat borders en padding correct worden berekend */
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 /* Verwijder de border bij het eerste item */
@@ -121,7 +124,6 @@ nav ul li a:hover {
 nav ul li {
     margin: 0;
 }
-
 
 /* Hero afbeelding - gestrekt over de volledige breedte zonder bijsnijden */
 .hero-image {
@@ -149,8 +151,6 @@ main {
     text-align: center;
     flex: 1; /* Zorgt ervoor dat het hoofdgedeelte de beschikbare ruimte opvult */
 }
-
-
 
 footer {
     background-color: #333;
@@ -257,6 +257,8 @@ a:hover {
     max-width: 550px;
     border: 2px solid white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    height: 350px; /* Vaste hoogte voor de wedstrijd-box */
 }
 
 .team {
@@ -276,12 +278,16 @@ a:hover {
     margin-bottom: 10px; /* Wat ruimte tussen de afbeelding en de teamnaam */
 }
 
-.team-left{
-    margin-top: 30px;
+.team-left {
+    margin-top: 10px;
 }
 
-.name-right{
+.name-right {
     margin-top: 10px;
+}
+
+.name-left {
+    margin-top: -1px;
 }
 
 .wedstrijd-details {
@@ -307,8 +313,9 @@ a:hover {
 }
 
 .wedstrijd-info {
-    text-align: left;  /* Tekst uitlijnen naar links */
-    font-size: 16px;
+    text-align: center;  /* Tekst uitlijnen naar links */
+    font-size: 18px;
+    font-weight: bold;
     line-height: 1.5;
 }
 
@@ -327,9 +334,10 @@ a:hover {
     align-items: center; /* Verticaal centreren van de inhoud */
     gap: 40px; /* Voeg meer ruimte toe tussen de afbeeldingen en de wedstrijd-box */
     margin-top: 40px; /* Voeg marge toe aan de bovenkant van de container voor wat ruimte */
-    max-width: 2000px; /* Maximaliseer de breedte van de container */
+    max-width: 1800px; /* Maximaliseer de breedte van de container */
     margin-left: auto; /* Center de container horizontaal */
     margin-right: auto; /* Center de container horizontaal */
+    
 }
 
 /* Aanpassingen voor de afbeeldingen aan de linker en rechterkant */
@@ -345,4 +353,47 @@ a:hover {
     width: auto; /* Behoud de verhoudingen van de afbeeldingen */
     height: auto;
     object-fit: contain; /* Zorg ervoor dat de afbeeldingen binnen de container blijven zonder vervormd te worden */
+}
+
+.countdown {
+    position: absolute; /* Zorgt dat het in de wedstrijd-box blijft */
+    bottom: 10px; /* Plaatst het 10px boven de onderkant */
+    right: 10px; /* Plaatst het 10px van de rechterkant */
+    background-color: rgba(0, 0, 0, 0.7); /* Zwarte achtergrond met doorzichtigheid */
+    color: #fff; /* Witte tekstkleur */
+    padding: 10px; /* Ruimte binnenin */
+    border-radius: 5px; /* Ronde hoeken */
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Ruimte rondom de klok */
+    border-radius: 10px; /* Ronde hoeken */
+}
+
+.countdown-item {
+    text-align: center;
+    margin: 0 10px; /* Ruimte tussen de items */
+}
+
+.countdown-number {
+    font-size: 24px; /* Grotere tekstgrootte voor de cijfers */
+    font-weight: bold; /* Vetgedrukte tekst voor cijfers */
+    color: white; /* Kleur van de cijfers */
+}
+
+.countdown-label {
+    font-size: 12px; /* Kleinere tekstgrootte voor de labels onder de cijfers */
+    color: white; /* Kleur van de labels */
+    display: block; /* Zorg ervoor dat de labels op een nieuwe regel staan */
+}
+
+.separator {
+    font-size: 16px; /* Zorg ervoor dat de separator dezelfde grootte heeft als de cijfers */
+    color: white; /* Kleur van de separator */
+    margin: 0 10px; /* Ruimte tussen de separator en de tijdselementen */
 }
