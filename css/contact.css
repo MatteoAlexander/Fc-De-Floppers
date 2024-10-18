@@ -58,7 +58,7 @@ header {
     font-size: 30px; /* Pas de lettergrootte aan indien nodig */
     margin-left: 20px; /* Ruimte tussen logo en tekst */
     padding-left: 100px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Oswald", sans-serif;
 }
 
 /* Navigation bar styling */
@@ -99,6 +99,7 @@ nav ul li a {
     align-items: center; /* Verticaal centreren van de tekst */
     height: 100%; /* Zorg ervoor dat de links de volledige hoogte vullen */
     box-sizing: border-box; /* Zorg ervoor dat borders en padding correct worden berekend */
+    font-family: "Oswald", sans-serif;
 }
 
 /* Verwijder de border bij het eerste item */
