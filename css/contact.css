@@ -5,9 +5,10 @@ body {
     padding: 0;
     background-color: #121212;
     color: #f4f4f4;
-    min-height: 100vh; /* Zorg ervoor dat de body ten minste de volledige hoogte van het scherm heeft */
+    min-height: 100vh;
     display: flex;
-    flex-direction: column; /* Gebruik flexbox om de elementen binnen de body te positioneren */
+    flex-direction: column;
+    align-items: flex-start; /* Zorg ervoor dat de content niet naar beneden wordt gepusht */
 }
 
 header {
@@ -146,9 +147,9 @@ nav ul li {
 
 /* Stijlen voor de rest van de pagina */
 main {
-    padding: 0;
-    text-align: center;
-    flex: 1; /* Zorgt ervoor dat het hoofdgedeelte de beschikbare ruimte opvult */
+    padding: 80px 40px; /* Ruimte toegevoegd om de header niet te overlappen */
+    text-align: left;
+    flex: 1;
 }
 
 
@@ -355,11 +356,13 @@ VASTE WAARDEN
 
 .container {
     max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
+    margin: 20px auto;
+    padding: 20px 20px 20px 100px; /* Voeg hier wat padding aan de linkerkant toe */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: left; /* Aligns content to the left */
+    display: flex; /* Maak gebruik van flexbox */
+    flex-direction: column; /* Zorg ervoor dat de container verticaal blijft */
 }
 
 h1, h2 {
@@ -367,9 +370,6 @@ h1, h2 {
     font-weight: bold;
 }
 
-.contact-info, .correspondent-info {
-    margin: 30px 0;
-}
 
 p {
     line-height: 1.6;
@@ -384,3 +384,53 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.contact-info p::before,
+.correspondent-info p::before {
+    content: "-"; /* Voeg een liggend streepje toe */
+    color: white; /* Kleur van het streepje */
+    margin-right: 30px;
+}
+
+h2{
+    padding-top: 50px;
+}
+
+.photo {
+    max-width: 200px; /* Pas de maximale breedte van de foto aan */
+    max-height: 200px; /* Pas de maximale hoogte van de foto aan */
+    object-fit: contain; /* Zorg ervoor dat de afbeelding proportioneel blijft */
+}
+
+.contact-container {
+    display: flex; /* Gebruik flexbox om de elementen naast elkaar te plaatsen */
+    justify-content: flex-start; /* Zorg ervoor dat ze aan de uiteinden van de container worden geplaatst */
+    align-items: flex-start;
+}
+
+
+.correspondent-photo {
+    flex: 0 0 200px; /* Geef de foto een vaste breedte, zodat deze niet gaat verspringen */
+    margin-left: 20px; /* Voeg marge toe aan de linkerzijde van de foto */
+}
+
+.photo {
+    max-width: 100%; /* Laat de foto zich aanpassen aan de container */
+    height: auto; /* Houd de hoogte proportioneel */
+    padding-left: 150px;
+}
+
+.contact-info, .correspondent-info {
+    flex: 1; /* Zorg ervoor dat beide secties de beschikbare ruimte gelijk verdelen */
+    margin-right: 20px; /* Voeg ruimte toe tussen de contactinformatie en correspondent-informatie */
+}
+
+.contact-info {
+    display: flex; /* Maak deze sectie een flex-container */
+    flex-wrap: wrap; /* Dit zorgt ervoor dat de elementen naar de volgende regel verhuizen als ze niet passen */
+}
+
+.contact-info p {
+    line-height: normal; /* Optioneel: Dit zorgt ervoor dat de regels bij elkaar blijven */
+}
+
