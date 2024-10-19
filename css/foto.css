@@ -149,6 +149,7 @@ main {
     padding: 0;
     text-align: center;
     flex: 1; /* Zorgt ervoor dat het hoofdgedeelte de beschikbare ruimte opvult */
+    margin-top: 50px;
 }
 
 
@@ -352,4 +353,27 @@ a:hover {
 VASTE WAARDEN
 /*#######################################################################################""*/
 
+/* Stijlen voor de fotogalerij */
+/* Stijlen voor de foto-galerij */
+.photo-gallery {
+    display: grid; /* Gebruik een grid lay-out voor de foto's */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Zorg ervoor dat de foto's automatisch opvullen */
+    gap: 15px; /* Ruimte tussen de foto's */
+    padding: 20px; /* Ruimte rond de galerij */
+    max-width: 1200px; /* Maximaal breedte van de galerij */
+    margin: 0 auto; /* Center de galerij op de pagina */
+}
 
+.photo-gallery img {
+    width: 100%; /* Zorg ervoor dat de afbeeldingen de volledige breedte van hun container gebruiken */
+    height: 100%; /* Vul de volledige beschikbare ruimte */
+    border-radius: 8px; /* Voeg afgeronde hoeken toe aan de afbeeldingen */
+    object-fit: cover; /* Zorg dat de afbeeldingen goed in de vakken passen zonder vervorming */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Voeg een schaduw toe voor diepte */
+    transition: transform 0.3s, box-shadow 0.3s; /* Zorg voor een mooie overgang bij hover */
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05); /* Zoom de afbeelding iets in bij hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Versterk de schaduw bij hover */
+}
