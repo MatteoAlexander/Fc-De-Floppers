@@ -142,19 +142,56 @@
         <p>&copy; Fc De Floppers Minivoetbalploeg Kern Gent. Alle rechten voorbehouden.</p>
     </footer>
     <script>
-        // Open de modal en toon de grote afbeelding
-        function openModal(src) {
-            var modal = document.getElementById("myModal");
-            var modalImg = document.getElementById("imgModal");
-            modal.style.display = "block";
-            modalImg.src = src;
-        }
+        let currentImageIndex = 0; // Huidige afbeelding index
 
-        // Sluit de modal
-        function closeModal() {
-            var modal = document.getElementById("myModal");
-            modal.style.display = "none";
+// Open de modal en toon de grote afbeelding
+function openModal(src) {
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("imgModal");
+    modal.style.display = "block";
+
+    // Verberg de header
+    var header = document.querySelector('header');
+    header.style.display = "none"; 
+
+    // Verkrijg de index van de huidige afbeelding
+    currentImageIndex = getCurrentImageIndex(src);
+    modalImg.src = src;
+}
+
+// Sluit de modal
+function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+
+    // Maak de header weer zichtbaar
+    var header = document.querySelector('header');
+    header.style.display = "block"; 
+}
+
+// Functie om de huidige afbeelding index op te halen
+function getCurrentImageIndex(src) {
+    const images = document.querySelectorAll('.photo-gallery img');
+    for (let i = 0; i < images.length; i++) {
+        if (images[i].src === src) {
+            return i; // retourneer de index van de afbeelding
         }
+    }
+    return -1; // indien niet gevonden
+}
+
+// Functie om de afbeelding te veranderen
+function changeImage(direction) {
+    const images = document.querySelectorAll('.photo-gallery img');
+    currentImageIndex = (currentImageIndex + direction + images.length) % images.length; // Bereken de nieuwe index
+    document.getElementById("imgModal").src = images[currentImageIndex].src; // Verander de afbeelding
+}
     </script>
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="prev" onclick="changeImage(-1); event.stopPropagation();">&#10094;</span>
+        <span class="next" onclick="changeImage(1); event.stopPropagation();">&#10095;</span>
+        <img class="modal-content" id="imgModal">
+    </div>
 </body>
 </html>

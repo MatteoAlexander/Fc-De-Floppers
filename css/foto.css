@@ -229,125 +229,6 @@ a:hover {
     vertical-align: middle;
 }
 
-/* Pijlen voor de afbeelding wisselaar */
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 50px; /* Pas de grootte van de pijlen aan indien nodig */
-    color: white;
-    cursor: pointer;
-    user-select: none; /* Voorkomt dat de tekst wordt geselecteerd */
-    z-index: 1; /* Zorgt ervoor dat de pijlen boven de afbeelding staan */
-}
-
-.arrow.left {
-    left: 20px; /* Positie van de linkerpijl */
-}
-
-.arrow.right {
-    right: 20px; /* Positie van de rechterpijl */
-}
-
-/* Stijlen voor de wedstrijd-box */
-.wedstrijd-box {
-    flex: 1; /* Zorg ervoor dat de wedstrijd-box de resterende ruimte opvult */
-    background-color: #1e1e1e;
-    color: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 550px;
-    border: 2px solid white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-width: 150px;
-    height: 150px; /* Zorg voor een vaste hoogte voor alle teams zodat ze gelijk staan */
-}
-
-.team img {
-    max-width: 100px;  /* Beperk de maximale breedte van de afbeeldingen */
-    max-height: 100px; /* Beperk de maximale hoogte van de afbeeldingen */
-    object-fit: contain; /* Zorg dat de afbeelding proportioneel blijft */
-    margin-bottom: 10px; /* Wat ruimte tussen de afbeelding en de teamnaam */
-}
-
-.team-left{
-    margin-top: 30px;
-}
-
-.name-right{
-    margin-top: 10px;
-}
-
-.wedstrijd-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    height: 150px; /* Zorg ervoor dat de team-container een vaste hoogte heeft */
-}
-
-.team-name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px; /* Vaste hoogte voor de teamnaam zodat ze altijd gelijk staan */
-}
-
-.vs {
-    font-size: 30px;
-    font-weight: bold;
-    color: #bbb;
-    margin: 0 20px;
-}
-
-.wedstrijd-info {
-    text-align: left;  /* Tekst uitlijnen naar links */
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.wedstrijd-info p {
-    margin: 5px 0;  /* Voeg wat marges toe tussen de regels */
-}
-
-.wedstrijd-info span {
-    color: #f4f4f4;  /* Rood voor speciale details zoals speeldag */
-}
-
-/* Stijlen voor de wedstrijd-container */
-.wedstrijd-container {
-    display: flex; /* Gebruik flexbox om de afbeeldingen en wedstrijd-box op een rij te zetten */
-    justify-content: center; /* Zorg ervoor dat alles in het midden staat */
-    align-items: center; /* Verticaal centreren van de inhoud */
-    gap: 40px; /* Voeg meer ruimte toe tussen de afbeeldingen en de wedstrijd-box */
-    margin-top: 40px; /* Voeg marge toe aan de bovenkant van de container voor wat ruimte */
-    max-width: 2000px; /* Maximaliseer de breedte van de container */
-    margin-left: auto; /* Center de container horizontaal */
-    margin-right: auto; /* Center de container horizontaal */
-}
-
-/* Aanpassingen voor de afbeeldingen aan de linker en rechterkant */
-.image-left, .image-right {
-    flex: 0 0 200px; /* Vergroot de flex-basis voor de zij-afbeeldingen */
-    text-align: center;
-}
-
-/* Aanpassingen voor de afbeeldingen zelf */
-.image-left img, .image-right img {
-    max-width: 300px; /* Verhoog de maximale breedte van de afbeeldingen */
-    max-height: 300px; /* Verhoog de maximale hoogte van de afbeeldingen */
-    width: auto; /* Behoud de verhoudingen van de afbeeldingen */
-    height: auto;
-    object-fit: contain; /* Zorg ervoor dat de afbeeldingen binnen de container blijven zonder vervormd te worden */
-}
 
 /*#######################################################################################""
 VASTE WAARDEN
@@ -376,4 +257,96 @@ VASTE WAARDEN
 .photo-gallery img:hover {
     transform: scale(1.05); /* Zoom de afbeelding iets in bij hover */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Versterk de schaduw bij hover */
+}
+
+/* Modal styling */
+.modal {
+    display: none; /* Verborgen door standaard */
+    position: fixed; /* Blijft op dezelfde plaats */
+    z-index: 1000; /* Voorgrond */
+    left: 0;
+    top: 0;
+    width: 100%; /* Volledige breedte */
+    height: 100%; /* Volledige hoogte */
+    overflow: hidden; /* Voorkomt scrollen */
+    background-color: rgba(0, 0, 0, 0.8); /* Zwarte achtergrond met transparantie */
+}
+
+/* Modal content (de grote afbeelding) */
+.modal-content {
+    position: absolute;
+    top: 50%; /* Centreren verticaal */
+    left: 50%; /* Centreren horizontaal */
+    transform: translate(-50%, -50%); /* Centreren */
+    max-width: 90%; /* Maximaal 90% van de breedte van het scherm */
+    max-height: 90%; /* Maximaal 90% van de hoogte van het scherm */
+    width: auto; /* Automatische breedte */
+    height: auto; /* Automatische hoogte */
+    object-fit: contain; /* Behoudt de verhoudingen van de afbeelding */
+}
+
+/* Close button (X) */
+.close {
+    position: absolute;
+    top: 50px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+}
+
+/* Voeg een fade-in animatie toe voor de modal */
+@keyframes modalFadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.modal-content {
+    animation-name: modalFadeIn;
+    animation-duration: 0.4s;
+}
+
+/* Back button (kruisje rechtsboven) */
+.close {
+    position: absolute;
+    top: 20px; /* Verander dit naar 20px of een andere waarde naar keuze */
+    right: 20px; /* Dit positioneert de knop aan de rechterkant van de modal */
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 16px;
+    user-select: none; /* Voorkomt dat tekst geselecteerd wordt */
+    z-index: 1001; /* Zorg ervoor dat de pijlen boven de modal staan */
+}
+
+.prev {
+    left: 10px; /* Plaats de linkerpijl links */
+}
+
+.next {
+    right: 10px; /* Plaats de rechterpijl rechts */
 }
