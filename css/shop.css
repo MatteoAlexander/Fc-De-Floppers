@@ -144,15 +144,6 @@ nav ul li {
     opacity: 0; /* Begin met een onzichtbare afbeelding */
 }
 
-/* Stijlen voor de rest van de pagina */
-main {
-    padding: 0;
-    text-align: center;
-    flex: 1; /* Zorgt ervoor dat het hoofdgedeelte de beschikbare ruimte opvult */
-}
-
-
-
 footer {
     background-color: #333;
     color: white;
@@ -228,129 +219,107 @@ a:hover {
     vertical-align: middle;
 }
 
-/* Pijlen voor de afbeelding wisselaar */
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 50px; /* Pas de grootte van de pijlen aan indien nodig */
-    color: white;
-    cursor: pointer;
-    user-select: none; /* Voorkomt dat de tekst wordt geselecteerd */
-    z-index: 1; /* Zorgt ervoor dat de pijlen boven de afbeelding staan */
-}
-
-.arrow.left {
-    left: 20px; /* Positie van de linkerpijl */
-}
-
-.arrow.right {
-    right: 20px; /* Positie van de rechterpijl */
-}
-
-/* Stijlen voor de wedstrijd-box */
-.wedstrijd-box {
-    flex: 1; /* Zorg ervoor dat de wedstrijd-box de resterende ruimte opvult */
-    background-color: #1e1e1e;
-    color: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 550px;
-    border: 2px solid white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-width: 150px;
-    height: 150px; /* Zorg voor een vaste hoogte voor alle teams zodat ze gelijk staan */
-}
-
-.team img {
-    max-width: 100px;  /* Beperk de maximale breedte van de afbeeldingen */
-    max-height: 100px; /* Beperk de maximale hoogte van de afbeeldingen */
-    object-fit: contain; /* Zorg dat de afbeelding proportioneel blijft */
-    margin-bottom: 10px; /* Wat ruimte tussen de afbeelding en de teamnaam */
-}
-
-.team-left{
-    margin-top: 30px;
-}
-
-.name-right{
-    margin-top: 10px;
-}
-
-.wedstrijd-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    height: 150px; /* Zorg ervoor dat de team-container een vaste hoogte heeft */
-}
-
-.team-name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px; /* Vaste hoogte voor de teamnaam zodat ze altijd gelijk staan */
-}
-
-.vs {
-    font-size: 30px;
-    font-weight: bold;
-    color: #bbb;
-    margin: 0 20px;
-}
-
-.wedstrijd-info {
-    text-align: left;  /* Tekst uitlijnen naar links */
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.wedstrijd-info p {
-    margin: 5px 0;  /* Voeg wat marges toe tussen de regels */
-}
-
-.wedstrijd-info span {
-    color: #f4f4f4;  /* Rood voor speciale details zoals speeldag */
-}
-
-/* Stijlen voor de wedstrijd-container */
-.wedstrijd-container {
-    display: flex; /* Gebruik flexbox om de afbeeldingen en wedstrijd-box op een rij te zetten */
-    justify-content: center; /* Zorg ervoor dat alles in het midden staat */
-    align-items: center; /* Verticaal centreren van de inhoud */
-    gap: 40px; /* Voeg meer ruimte toe tussen de afbeeldingen en de wedstrijd-box */
-    margin-top: 40px; /* Voeg marge toe aan de bovenkant van de container voor wat ruimte */
-    max-width: 2000px; /* Maximaliseer de breedte van de container */
-    margin-left: auto; /* Center de container horizontaal */
-    margin-right: auto; /* Center de container horizontaal */
-}
-
-/* Aanpassingen voor de afbeeldingen aan de linker en rechterkant */
-.image-left, .image-right {
-    flex: 0 0 200px; /* Vergroot de flex-basis voor de zij-afbeeldingen */
-    text-align: center;
-}
-
-/* Aanpassingen voor de afbeeldingen zelf */
-.image-left img, .image-right img {
-    max-width: 300px; /* Verhoog de maximale breedte van de afbeeldingen */
-    max-height: 300px; /* Verhoog de maximale hoogte van de afbeeldingen */
-    width: auto; /* Behoud de verhoudingen van de afbeeldingen */
-    height: auto;
-    object-fit: contain; /* Zorg ervoor dat de afbeeldingen binnen de container blijven zonder vervormd te worden */
-}
 
 /*#######################################################################################""
 VASTE WAARDEN
 /*#######################################################################################""*/
 
+/* Algemene stijl voor het main element */
+main {
+    background-color: #000;    /* Zwarte achtergrond */
+    padding-top: 80px;         /* 80px ruimte bovenaan */
+    display: flex;
+    flex-direction: column;    /* Flexbox in kolomrichting */
+    align-items: center;       /* Centreer items horizontaal */
+}
 
+/* Container voor de floppertjes en slagzin */
+.slagzin-container {
+    display: flex;             /* Flexbox gebruiken om elementen naast elkaar te zetten */
+    align-items: center;       /* Verticaal centreren van de items */
+    justify-content: center;   /* Horizontaal centreren van de container */
+    gap: 20px;                 /* Ruimte tussen de items */
+    margin-bottom: 10px;       /* 30px ruimte onder de container */
+}
 
+/* Stijl voor de floppertjes afbeeldingen */
+.floppertjes1, .floppertjes2 {
+    max-width: 100px;          /* Maximale breedte van de afbeeldingen */
+    max-height: 100px;         /* Maximale hoogte van de afbeeldingen */
+    width: auto;               /* Behoud de verhoudingen van de afbeeldingen */
+    height: auto;
+    object-fit: contain;       /* Zorg dat de afbeeldingen binnen de container blijven zonder vervormd te worden */
+    margin-top: 30px;
+}
+
+/* Stijl voor de slagzin */
+.slagzin {
+    font-size: 60px;           /* Grote tekst voor de slogan */
+    font-weight: bold;         /* Vetgedrukte tekst */
+    margin-bottom: 0;          /* Geen extra marge onder de slogan */
+    color: white;              /* Witte kleur voor de tekst */
+    text-align: center;        /* Centreer de tekst */
+}
+
+/* Stijl voor de subtitel (p-element) */
+main p {
+    font-size: 18px;           /* Kleiner lettertype voor de subtitel */
+    color: white;              /* Witte tekstkleur */
+}
+
+.onderslagzin{
+    font-size: 18px;           /* Kleiner lettertype voor de subtitel */
+    color: white;              /* Witte tekstkleur */
+    margin-bottom: 80px;
+}
+
+/* Shop-container aan de linkerkant uitgelijnd */
+.shop-container {
+    display: flex;
+    justify-content: flex-start; /* Uitgelijnd naar de linkerkant */
+    padding: 20px;
+    width: 100%;                /* Breedte van 100% voor de container */
+    padding-left: 50px;         /* Voeg 50px padding toe aan de linkerkant om het verder van de rand te zetten */
+    margin-top: 60px;
+}
+
+/* Stijl voor het product */
+.product {
+    text-align: left;           /* Uitlijnen van de tekst naar links */
+    width: 300px;               /* Verhoog de breedte van het productblok voor grotere afbeelding */
+    margin-left: 200px;
+}
+
+/* Stijl voor de afbeelding */
+.product-image {
+    width: 100%;                /* De afbeelding past binnen de breedte van het productblok */
+    height: auto;               /* Houdt de verhoudingen intact */
+    border-radius: 8px;         /* Optioneel: afgeronde hoeken voor de afbeelding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optioneel: lichte schaduw voor diepte */
+}
+
+/* Stijl voor de figcaption (productinfo en prijs) */
+figcaption {
+    margin-top: 10px;
+}
+
+.info.item {
+    font-size: 18px;            /* Tekstgrootte voor de productbeschrijving */
+    color: white;               /* Witte tekstkleur */
+    margin-bottom: 0;
+}
+
+.prijs {
+    font-size: 20px;            /* Tekstgrootte voor de prijs */
+    font-weight: bold;          /* Vetgedrukte prijs */
+    color: white;               /* Witte tekstkleur */
+    margin-top: 5px;
+}
+
+h2{
+    margin-top: 80px;
+    font-size: 45px;           /* Grote tekst voor de slogan */
+    font-weight: bold;         /* Vetgedrukte tekst */
+    color: white;              /* Witte kleur voor de tekst */
+    text-align: center;   
+}
