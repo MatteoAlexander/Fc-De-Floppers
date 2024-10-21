@@ -1,0 +1,257 @@
+/* Algemene stijlen */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #f4f4f4;
+    min-height: 100vh; /* Zorg ervoor dat de body ten minste de volledige hoogte van het scherm heeft */
+    display: flex;
+    flex-direction: column; /* Gebruik flexbox om de elementen binnen de body te positioneren */
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Zorg ervoor dat de header vast blijft */
+    top: 0; /* Plaats de header aan de bovenkant */
+    left: 0; /* Zorg ervoor dat de header links begint */
+    right: 0; /* Zorg ervoor dat de header naar rechts uitstrekt */
+    z-index: 1000; /* Zorg ervoor dat de header boven andere elementen staat */
+}
+
+/* Top white section with lighter color */
+.header-top {
+    background-color: #f0f0f0;
+    height: 25px;
+    width: 100%;
+    z-index: 1; /* Ensure it's on top */
+}
+
+.header-bottom {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 50px;
+    position: relative;
+    border-bottom: 1px solid gray;
+}
+
+/* Logo-container */
+/* Logo styling to place it on both white and black sections */
+.logo {
+    position: absolute; /* Zorgt ervoor dat het logo vrij kan bewegen binnen de header */
+    top: -25px; /* Verhoogt de positie van het logo (verander dit indien nodig) */
+    left: 40px; /* Houdt het logo aan de linkerzijde */
+    z-index: 10; /* Zorgt ervoor dat het logo boven andere elementen staat */
+}
+
+.logo-img {
+    max-width: 80px; /* Adjust size to your preference */
+    height: auto;
+}
+
+.team-name {
+    color: white; /* Witte kleur voor de tekst */
+    font-size: 30px; /* Pas de lettergrootte aan indien nodig */
+    margin-left: 20px; /* Ruimte tussen logo en tekst */
+    padding-left: 100px;
+    font-family: "Oswald", sans-serif;
+}
+
+/* Navigation bar styling */
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: 160px;
+    height: 100%; /* Zorg dat de navigatie de volledige hoogte van de header vult */
+}
+
+/* Navigation bar styling */
+nav ul {
+    display: flex;
+    height: 100%; /* Zorg ervoor dat de ul de volledige hoogte vult */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 1px solid gray; /* Voeg deze regel toe */
+}
+
+/* Zorg ervoor dat elk item de volledige hoogte van de header vult en horizontaal verdeeld is */
+nav ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Zorg dat de li's de volledige hoogte van de header vullen */
+    border-left: 1px solid gray;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0 20px;
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Verticaal centreren van de tekst */
+    height: 100%; /* Zorg ervoor dat de links de volledige hoogte vullen */
+    box-sizing: border-box; /* Zorg ervoor dat borders en padding correct worden berekend */
+    font-family: "Oswald", sans-serif;
+}
+
+/* Verwijder de border bij het eerste item */
+nav ul li:first-child {
+    border-left: none;
+}
+
+/* Voeg een rechter border toe aan het laatste item */
+nav ul li:last-child {
+    border-right: 1px solid white;
+}
+
+/* Hover-effect voor navigatie-items */
+nav ul li a:hover {
+    background-color: #555; /* Grijze achtergrondkleur bij hover */
+    transition: background-color 0.3s ease;
+}
+
+/* Ensure items are evenly spaced and aligned */
+nav ul li {
+    margin: 0;
+}
+
+
+/* Hero afbeelding - gestrekt over de volledige breedte zonder bijsnijden */
+.hero-image {
+    overflow: hidden; /* Zorg ervoor dat bijsnijden plaatsvindt */
+    height: calc(110vh); /* Geef een vaste hoogte aan de hero afbeelding, inclusief de 60px voor bijsnijden */
+    position: relative; /* Maak het mogelijk om de afbeelding te positioneren binnen deze container */
+}
+
+.hero-image img {
+    width: 100vw; /* De afbeelding neemt de volledige breedte van het scherm */
+    height: auto; /* Houdt de hoogte proportioneel */
+    object-fit: cover; /* Zorgt ervoor dat de afbeelding proportioneel wordt weergegeven */
+    display: block; /* Verwijder ongewenste witruimte onder de afbeelding */
+    margin: 0; /* Verwijder marges van de afbeelding */
+    padding: 0; /* Verwijder padding van de afbeelding */
+    position: absolute; /* Maak het mogelijk om de afbeelding te verplaatsen */
+    top: 0; /* Standaard top */
+    transition: opacity 0.5s ease; /* Voeg een overgang toe voor de opacity */
+    opacity: 0; /* Begin met een onzichtbare afbeelding */
+}
+
+a {
+    color: #f4f4f4;
+}
+
+a:hover {
+    color: #ddd;
+    text-decoration: underline;
+}
+
+.social-icon {
+    width: 20px; /* Behoud de grootte van het icoon */
+    height: auto;
+    margin-right: 8px; /* Ruimte tussen het icoon en de tekst */
+    vertical-align: middle;
+}
+
+
+
+/*#######################################################################################""
+VASTE WAARDEN
+/*#######################################################################################""*/
+
+/* Standaard styling voor main */
+main {
+    display: flex;
+    justify-content: center;  /* Centreer de content horizontaal */
+    align-items: center;      /* Centreer de content verticaal */
+    height: 100vh;            /* Zorg dat de main de volledige hoogte van de viewport inneemt */
+    background-color: #000;   /* Zwarte achtergrond */
+}
+
+/* Container die de twee helften bevat */
+.content-container {
+    display: flex;
+    width: 80%;               /* Breedte van 80% van het scherm */
+    max-width: 1200px;        /* Maximale breedte voor grotere schermen */
+    border-left: 1px solid white;  /* Verticale witte scheiding in het midden */
+}
+
+/* Linkerhelft voor de afbeelding */
+.left-half {
+    flex: 1;                  /* Neem 50% van de breedte */
+    display: flex;
+    justify-content: center;   /* Centreer de afbeelding horizontaal */
+    align-items: center;       /* Centreer de afbeelding verticaal */
+    background-color: white;   /* Wit vierkant achtergrond voor de afbeelding */
+    padding: 20px;
+}
+
+/* Stijl voor de afbeelding van het product */
+.product-image {
+    max-width: 90%;           /* Zorg dat de afbeelding goed in het vierkant past */
+    height: auto;
+    border: 2px solid white;   /* Optionele rand rond de afbeelding */
+}
+
+/* Rechterhelft voor de tekst */
+.right-half {
+    flex: 1;                  /* Neem 50% van de breedte */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* Verticaal centreren van de tekst */
+    color: white;              /* Witte tekst op zwarte achtergrond */
+}
+
+/* Stijl voor de producttitel */
+.product-title {
+    font-size: 36px;           /* Groot lettertype voor de titel */
+    font-family: 'Bebas Neue', sans-serif; /* Gebruik je Bebas Neue font */
+    margin-bottom: 20px;
+}
+
+/* Stijl voor de productbeschrijving */
+.product-description {
+    font-size: 18px;           /* Normaal lettertype voor de beschrijving */
+    margin-bottom: 30px;
+    font-family: 'Oswald', sans-serif; /* Gebruik Oswald voor de beschrijving */
+}
+
+/* Stijl voor de prijs */
+.product-price {
+    font-size: 24px;           /* Grotere tekst voor de prijs */
+    font-weight: bold;
+}
+
+.uitverkocht{
+    max-width: 300px;          /* Maximale breedte van de afbeeldingen */
+    max-height: 300px;
+    height: 150px;              /* Maximale hoogte van de afbeeldingen */
+    width: 300px;
+    object-fit: contain;       /* Zorg dat de afbeeldingen binnen de container blijven zonder vervormd te worden */
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.close-button {
+    position: absolute;          /* Zorg ervoor dat het kruisje bovenop andere elementen zit */
+    top: 20px;                   /* Afstand vanaf de bovenkant */
+    right: 20px;                 /* Afstand vanaf de rechterkant */
+    font-size: 36px;             /* Grootte van het kruisje */
+    color: white;                /* Witte kleur voor het kruisje */
+    text-decoration: none;       /* Geen onderstreping onder het kruisje */
+    font-family: Arial, sans-serif; /* Simpel lettertype voor het kruisje */
+    cursor: pointer;             /* Verander de muiscursor naar een handje bij hover */
+    margin-top: 60px;
+}
+
+.close-button:hover {
+    text-decoration: none;       /* Zorg ervoor dat er geen onderstreping komt bij hover */
+}

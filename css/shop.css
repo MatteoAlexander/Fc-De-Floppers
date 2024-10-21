@@ -270,7 +270,7 @@ main p {
 .onderslagzin{
     font-size: 18px;           /* Kleiner lettertype voor de subtitel */
     color: white;              /* Witte tekstkleur */
-    margin-bottom: 80px;
+    margin-bottom: 0px;
 }
 
 /* Shop-container aan de linkerkant uitgelijnd */
@@ -283,6 +283,11 @@ main p {
     margin-top: 60px;
 }
 
+.shop-container a {
+    text-decoration: none;   /* Verwijder de onderstreping van de link */
+    color: inherit;          /* Zorg dat de tekstkleur hetzelfde blijft als de omringende tekst */
+}
+
 /* Stijl voor het product */
 .product {
     text-align: left;           /* Uitlijnen van de tekst naar links */
@@ -292,10 +297,13 @@ main p {
 
 /* Stijl voor de afbeelding */
 .product-image {
-    width: 100%;                /* De afbeelding past binnen de breedte van het productblok */
-    height: auto;               /* Houdt de verhoudingen intact */
-    border-radius: 8px;         /* Optioneel: afgeronde hoeken voor de afbeelding */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optioneel: lichte schaduw voor diepte */
+    width: 100%;                   /* De afbeelding past binnen de breedte van het productblok */
+    height: auto;                  /* Houdt de verhoudingen intact */
+    padding: 20px;                 /* Voeg padding toe binnen het witte vierkant */
+    background-color: white;       /* Witte achtergrond voor het vierkant */
+    border: 2px solid white;       /* Optionele witte rand rond de afbeelding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lichte schaduw voor diepte */
+    border-radius: 0px;            /* Optioneel: afgeronde hoeken voor de afbeelding */
 }
 
 /* Stijl voor de figcaption (productinfo en prijs) */
@@ -310,16 +318,29 @@ figcaption {
 }
 
 .prijs {
-    font-size: 20px;            /* Tekstgrootte voor de prijs */
+    font-size: 25px;            /* Tekstgrootte voor de prijs */
     font-weight: bold;          /* Vetgedrukte prijs */
     color: white;               /* Witte tekstkleur */
     margin-top: 5px;
 }
 
-h2{
-    margin-top: 80px;
+.latermeer{
+    margin-top: 200px;
     font-size: 45px;           /* Grote tekst voor de slogan */
     font-weight: bold;         /* Vetgedrukte tekst */
     color: white;              /* Witte kleur voor de tekst */
-    text-align: center;   
+    text-align: center; 
+    margin-bottom: 300px; 
+}
+
+.sjaal1, .sjaal2 {
+    width: 100%;               /* Zorg dat de afbeeldingen de volledige breedte van het scherm innemen */
+    height: auto;              /* Behoud de verhoudingen van de afbeeldingen */
+    max-width: none;           /* Verwijder de maximale breedte zodat het niet beperkt wordt */
+    object-fit: cover;         /* Zorg ervoor dat de afbeeldingen de volledige ruimte vullen zonder vervorming */
+    margin-top: 30px;          /* Ruimte boven de sjaals */
+}
+
+.sjaal2{
+    margin-bottom: 80px;
 }
