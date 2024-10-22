@@ -146,7 +146,7 @@ nav ul li {
 
 /* Stijlen voor de rest van de pagina */
 main {
-    padding: 0;
+    padding: 20px;
     text-align: center;
     flex: 1; /* Zorgt ervoor dat het hoofdgedeelte de beschikbare ruimte opvult */
 }
@@ -228,128 +228,55 @@ a:hover {
     vertical-align: middle;
 }
 
-/* Pijlen voor de afbeelding wisselaar */
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 50px; /* Pas de grootte van de pijlen aan indien nodig */
-    color: white;
-    cursor: pointer;
-    user-select: none; /* Voorkomt dat de tekst wordt geselecteerd */
-    z-index: 1; /* Zorgt ervoor dat de pijlen boven de afbeelding staan */
-}
-
-.arrow.left {
-    left: 20px; /* Positie van de linkerpijl */
-}
-
-.arrow.right {
-    right: 20px; /* Positie van de rechterpijl */
-}
-
-/* Stijlen voor de wedstrijd-box */
-.wedstrijd-box {
-    flex: 1; /* Zorg ervoor dat de wedstrijd-box de resterende ruimte opvult */
-    background-color: #1e1e1e;
-    color: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 550px;
-    border: 2px solid white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-width: 150px;
-    height: 150px; /* Zorg voor een vaste hoogte voor alle teams zodat ze gelijk staan */
-}
-
-.team img {
-    max-width: 100px;  /* Beperk de maximale breedte van de afbeeldingen */
-    max-height: 100px; /* Beperk de maximale hoogte van de afbeeldingen */
-    object-fit: contain; /* Zorg dat de afbeelding proportioneel blijft */
-    margin-bottom: 10px; /* Wat ruimte tussen de afbeelding en de teamnaam */
-}
-
-.team-left{
-    margin-top: 30px;
-}
-
-.name-right{
-    margin-top: 10px;
-}
-
-.wedstrijd-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    height: 150px; /* Zorg ervoor dat de team-container een vaste hoogte heeft */
-}
-
-.team-name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px; /* Vaste hoogte voor de teamnaam zodat ze altijd gelijk staan */
-}
-
-.vs {
-    font-size: 30px;
-    font-weight: bold;
-    color: #bbb;
-    margin: 0 20px;
-}
-
-.wedstrijd-info {
-    text-align: left;  /* Tekst uitlijnen naar links */
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.wedstrijd-info p {
-    margin: 5px 0;  /* Voeg wat marges toe tussen de regels */
-}
-
-.wedstrijd-info span {
-    color: #f4f4f4;  /* Rood voor speciale details zoals speeldag */
-}
-
-/* Stijlen voor de wedstrijd-container */
-.wedstrijd-container {
-    display: flex; /* Gebruik flexbox om de afbeeldingen en wedstrijd-box op een rij te zetten */
-    justify-content: center; /* Zorg ervoor dat alles in het midden staat */
-    align-items: center; /* Verticaal centreren van de inhoud */
-    gap: 40px; /* Voeg meer ruimte toe tussen de afbeeldingen en de wedstrijd-box */
-    margin-top: 40px; /* Voeg marge toe aan de bovenkant van de container voor wat ruimte */
-    max-width: 2000px; /* Maximaliseer de breedte van de container */
-    margin-left: auto; /* Center de container horizontaal */
-    margin-right: auto; /* Center de container horizontaal */
-}
-
-/* Aanpassingen voor de afbeeldingen aan de linker en rechterkant */
-.image-left, .image-right {
-    flex: 0 0 200px; /* Vergroot de flex-basis voor de zij-afbeeldingen */
-    text-align: center;
-}
-
-/* Aanpassingen voor de afbeeldingen zelf */
-.image-left img, .image-right img {
-    max-width: 300px; /* Verhoog de maximale breedte van de afbeeldingen */
-    max-height: 300px; /* Verhoog de maximale hoogte van de afbeeldingen */
-    width: auto; /* Behoud de verhoudingen van de afbeeldingen */
-    height: auto;
-    object-fit: contain; /* Zorg ervoor dat de afbeeldingen binnen de container blijven zonder vervormd te worden */
-}
-
 /*#######################################################################################""
 VASTE WAARDEN
 /*#######################################################################################""*/
 
 
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 100px auto 0; /* Voegt 40px top-margin toe */
+}
+
+.player-square {
+    display: flex;
+    background-color: #333;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    align-items: center;
+    color: white;
+    margin-bottom: 80px;
+}
+
+.player-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.player-info h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.player-info p {
+    margin-bottom: 5px;
+    color: #ddd;
+}
+
+.player-info strong {
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .players-grid {
+        grid-template-columns: 1fr;
+    }
+}
