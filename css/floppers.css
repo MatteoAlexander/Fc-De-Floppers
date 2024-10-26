@@ -238,26 +238,33 @@ VASTE WAARDEN
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     max-width: 1200px;
-    margin: 100px auto 0; /* Voegt 40px top-margin toe */
+    margin: 100px auto 0;
+    margin-bottom: 100px;
 }
 
 .player-square {
     display: flex;
     background-color: #333;
     border: 2px solid white;
-    border-radius: 10px;
-    padding: 20px;
-    align-items: center;
+    width: 500px; /* Rechthoekige afmeting */
+    height: 335px; /* Rechthoekige afmeting */
+    padding: 10px;
+    align-items: flex-start; /* Zorg dat de content bovenaan uitgelijnd is */
     color: white;
-    margin-bottom: 80px;
 }
 
 .player-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
-    margin-right: 20px;
+    margin-right: 20px; /* Voeg ruimte toe tussen foto en tekst */
+    border-radius: 0;
+}
+
+.player-info {
+    display: block; /* Zorg dat de tekst zichtbaar is */
+    text-align: left; /* Zorg dat alle tekst links is uitgelijnd */
+    flex-grow: 1; /* Laat de tekstkolom groeien zodat deze meer ruimte inneemt */
 }
 
 .player-info h3 {
@@ -269,6 +276,7 @@ VASTE WAARDEN
 .player-info p {
     margin-bottom: 5px;
     color: #ddd;
+    text-align: left; /* Zorg dat de paragraaf links uitgelijnd blijft */
 }
 
 .player-info strong {
@@ -278,5 +286,16 @@ VASTE WAARDEN
 @media screen and (max-width: 768px) {
     .players-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .player-square {
+        width: 100%;
+        height: auto; /* Laat de hoogte automatisch aanpassen op mobiele apparaten */
+        flex-direction: column; /* Stapel foto en tekst onder elkaar op kleinere schermen */
+    }
+
+    .player-photo {
+        margin-right: 0;
+        margin-bottom: 10px; /* Voeg wat ruimte toe onder de foto */
     }
 }
