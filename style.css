@@ -1,4 +1,10 @@
 /* Algemene stijlen */
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -333,7 +339,7 @@ a:hover {
     justify-content: center; /* Zorg ervoor dat alles in het midden staat */
     align-items: center; /* Verticaal centreren van de inhoud */
     gap: 40px; /* Voeg meer ruimte toe tussen de afbeeldingen en de wedstrijd-box */
-    margin-top: 40px; /* Voeg marge toe aan de bovenkant van de container voor wat ruimte */
+    margin-top: 100px; /* Voeg marge toe aan de bovenkant van de container voor wat ruimte */
     max-width: 1800px; /* Maximaliseer de breedte van de container */
     margin-left: auto; /* Center de container horizontaal */
     margin-right: auto; /* Center de container horizontaal */
@@ -396,4 +402,176 @@ a:hover {
     font-size: 16px; /* Zorg ervoor dat de separator dezelfde grootte heeft als de cijfers */
     color: white; /* Kleur van de separator */
     margin: 0 10px; /* Ruimte tussen de separator en de tijdselementen */
+}
+
+/*
+************************************
+deel1
+************************************
+*/
+/* Pas de floppersinfo-container aan om alleen verticale scrollen te gebruiken */
+.floppersinfo {
+    display: flex;
+    justify-content: flex-start; /* Gebruik flex-start in plaats van space-between */
+    align-items: center;
+    padding: 20px 40px;
+    gap: 40px;
+    width: 100%;
+    background-color: #f0f0f0ee;
+    color: #121212;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 150px;
+    
+}
+
+/* Extra instellingen voor tekst, afbeelding en paragrafen zoals eerder */
+.floppersinfo h2, .floppersinfo p {
+    margin: 0;
+    text-align: left;
+}
+
+.floppersinfo h2 {
+    margin-bottom: 50px;
+    font-size: 30px;
+}
+
+.floppersinfo p {
+    margin-bottom: 15px;
+    font-size: 16px; /* Pas de grootte aan naar wens, bijv. 18px */
+    line-height: 1.6; /* Zorg voor voldoende ruimte tussen de regels */
+}
+
+.floppersinfo img {
+    max-width: 600px;
+    max-height: 800px;
+    object-fit: contain;
+    margin-right: 150px;
+    margin-bottom: 70px;
+    margin-top: 70px;
+}
+
+.floppersinfo-text {
+    flex: 1;
+    max-width: 50%;
+   
+}
+
+.floppersinfo-wrapper {
+    margin-left: 100px;
+    flex: 1;
+}
+
+/*
+************************************
+deel2
+************************************
+*/
+
+.floppersinfo2 {
+    display: flex;
+    justify-content: flex-start; /* Gebruik flex-start in plaats van space-between */
+    align-items: center;
+    padding: 20px 40px;
+    gap: 80px;
+    width: 100%;
+    background-color: #121212;
+    color: #f4f4f4;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 0px;
+}
+
+/* Extra instellingen voor tekst, afbeelding en paragrafen zoals eerder */
+.floppersinfo2 h2, .floppersinfo2 p {
+    margin: 0;
+    text-align: left;
+}
+
+.floppersinfo2 h2 {
+    margin-bottom: 50px;
+    font-size: 30px;
+}
+
+.floppersinfo2 p {
+    margin-bottom: 15px;
+    font-size: 16px; /* Pas de grootte aan naar wens, bijv. 18px */
+    line-height: 1.6; /* Zorg voor voldoende ruimte tussen de regels */
+}
+
+.floppersinfo2 img {
+    max-width: 600px;
+    max-height: 800px;
+    object-fit: contain;
+    margin-left: 120px;
+    margin-right: 110px;
+}
+
+.floppersinfo-text2 {
+    flex: 1;
+    max-width: 50%;
+   
+}
+
+.floppersinfo-wrapper2 {
+    margin-right: 150px;
+    margin-bottom: 70px;
+    margin-top: 70px;
+    flex: 1;
+}
+
+/*
+************************************
+deel3
+************************************
+*/
+.floppersinfo3 {
+    display: flex;
+    justify-content: flex-start; /* Gebruik flex-start in plaats van space-between */
+    align-items: center;
+    padding: 20px 40px;
+    gap: 40px;
+    width: 100%;
+    background-color: #f0f0f0ee;
+    color: #121212;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+
+/* Extra instellingen voor tekst, afbeelding en paragrafen zoals eerder */
+.floppersinfo3 h2, .floppersinfo3 p {
+    margin: 0;
+    text-align: left;
+}
+
+.floppersinfo3 h2 {
+    margin-bottom: 50px;
+    font-size: 30px;
+}
+
+.floppersinfo3 p {
+    margin-bottom: 15px;
+    font-size: 16px; /* Pas de grootte aan naar wens, bijv. 18px */
+    line-height: 1.6; /* Zorg voor voldoende ruimte tussen de regels */
+}
+
+.floppersinfo3 img {
+    max-width: 600px;
+    max-height: 800px;
+    object-fit: contain;
+    margin-right: 150px;
+    margin-bottom: 70px;
+    margin-top: 70px;
+}
+
+.floppersinfo-text3 {
+    flex: 1;
+    max-width: 50%;
+   
+}
+
+.floppersinfo-wrapper3 {
+    margin-left: 100px;
+    flex: 1;
 }
