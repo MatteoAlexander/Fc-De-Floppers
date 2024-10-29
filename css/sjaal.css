@@ -261,3 +261,203 @@ main {
 .close-button:hover {
     text-decoration: none;       /* Zorg ervoor dat er geen onderstreping komt bij hover */
 }
+
+
+
+/*
+***********************************************
+GSM instellingen
+***********************************************
+*/
+
+
+.logo-mobile {
+    display: none; /* Standaard niet zichtbaar */
+}
+
+.header-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+body {
+    margin: 0;
+    height: auto; /* Laat de hoogte automatisch zijn */
+    overflow: auto; /* Zorg ervoor dat de body kan scrollen */
+}
+
+body.menu-open {
+    overflow: hidden; /* Voorkom scrollen als het menu open is */
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    left: 20px; /* Zet de hamburgerknop naar links */
+    top: 12px;
+    z-index: 1000;
+}
+
+/* Menu stijlen voor mobiel */
+#nav-menu {
+    display: flex; /* Standaard zichtbaar op desktop */
+}
+
+/* Algemene stijlen */
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* Mobiele stijlen */
+@media (max-width: 768px) {
+    header {
+        position: relative;
+        z-index: 1000;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        left: 20px;
+        top: 12px;
+        z-index: 1000;
+    }
+
+    #nav-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        flex-direction: column;
+        padding: 0;
+        z-index: 900;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: auto;
+    }
+
+    #nav-menu.active {
+        display: flex;
+    }
+
+    .header-top,
+    .header-bottom {
+        height: auto;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo {
+        position: static;
+        top: 0;
+        left: 0;
+        margin-bottom: 10px;
+    }
+
+    .team-name {
+        font-size: 18px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    nav {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        border-left: none;
+        width: 100%;
+        align-items: center;
+    }
+
+    nav ul li {
+        width: 100%;
+        padding: 15px;
+        border-bottom: 1px solid #333;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 10px 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-image {
+        height: 50vh; /* Lagere hoogte op mobiele schermen */
+    }
+
+    .players-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .player-square {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .player-photo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Standaard desktop stijlen (boven 768px) */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    #nav-menu {
+        display: flex;
+    }
+
+    .players-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+

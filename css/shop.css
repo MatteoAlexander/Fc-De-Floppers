@@ -156,33 +156,35 @@ footer {
     text-align: center;
     padding: 10px;
     width: 100%;
-    position: static; /* Zorgt ervoor dat de footer altijd onderaan staat, maar niet vast is aan de viewport */
+    position: static;
     bottom: 0;
 }
 
 .footer-container {
     display: flex;
     justify-content: center;
-    text-align: left; /* Zorg ervoor dat de tekst links wordt uitgelijnd */
+    text-align: left;
     margin-bottom: 20px;
     gap: 40px;
+    max-width: 1200px; /* Max. breedte voor centreren op grotere schermen */
+    margin: 0 auto;    /* Zorgt ervoor dat de container gecentreerd blijft */
 }
 
 .footer-column {
     width: 25%;
-    text-align: left; /* Wijzig text-align naar left zodat de tekst links begint */
+    text-align: left;
 }
 
 .footer-column h3 {
     font-size: 18px;
     margin-bottom: 10px;
-    text-align: left; /* Ook de koppen links uitlijnen */
+    text-align: left;
 }
 
 .footer-column ul {
     list-style: none;
     padding: 0;
-    text-align: left; /* Lijsten links uitlijnen */
+    text-align: left;
 }
 
 .footer-column ul li {
@@ -200,7 +202,7 @@ footer {
 
 .footer-column p {
     margin: 0;
-    text-align: left; /* Ook de contactinformatie centreren */
+    text-align: left;
 }
 
 footer p {
@@ -349,4 +351,230 @@ figcaption {
 
 .sjaal2{
     margin-bottom: 80px;
+}
+
+
+/*
+***********************************************
+GSM instellingen
+***********************************************
+*/
+
+
+.logo-mobile {
+    display: none; /* Standaard niet zichtbaar */
+}
+
+.header-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+body {
+    margin: 0;
+    height: auto; /* Laat de hoogte automatisch zijn */
+    overflow: auto; /* Zorg ervoor dat de body kan scrollen */
+}
+
+body.menu-open {
+    overflow: hidden; /* Voorkom scrollen als het menu open is */
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    left: 20px; /* Zet de hamburgerknop naar links */
+    top: 12px;
+    z-index: 1000;
+}
+
+/* Menu stijlen voor mobiel */
+#nav-menu {
+    display: flex; /* Standaard zichtbaar op desktop */
+}
+
+/* Responsieve aanpassingen voor kleinere schermen */
+@media (max-width: 768px) {
+       /* Verbeterde stijlen voor de body */
+       body {
+        margin: 0;
+        height: 100vh; /* Zorg ervoor dat de body de volledige hoogte heeft */
+        overflow: auto; /* Voorkom scrollen */
+    }
+
+    header {
+        position: relative;
+        z-index: 1000;
+    }
+
+    .menu-toggle {
+        display: block; /* Toon hamburgerknop op mobiel */
+    }
+
+    #nav-menu {
+        display: none; /* Begin met verbergen */
+        position: fixed; /* Zorg ervoor dat het menu het scherm bedekt */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; /* Maak het menu de volledige hoogte */
+        background-color: black;
+        flex-direction: column;
+        padding: 0;
+        z-index: 900;
+        justify-content: flex-start; /* Centreer de inhoud */
+        align-items: center; /* Centreer de inhoud */
+        overflow: auto;
+    }
+
+    /* Wanneer het menu zichtbaar is */
+    #nav-menu.active {
+        display: flex; /* Toon het menu */
+    }
+
+    .logo-mobile {
+        display: block;
+        margin: 20px 0; /* Voeg wat marge toe rond het logo */
+        text-align: center; /* Centreer het logo */
+    }
+
+    /* Layout header */
+    .header-bottom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo {
+        margin-right: 20px 0;
+    }
+
+    .team-name {
+        color: white;
+        font-size: 18px;
+    }
+
+    /* Zorg dat navigatie links uitgelijnd is */
+    #nav-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column; /* Zorg voor kolomuitlijning */
+        align-items: center; /* Centreer links */
+    }
+
+    #nav-menu ul li {
+        width: 100%; /* Volledige breedte */
+        padding: 15px;
+        border-bottom: 1px solid #333;
+    }
+
+    #nav-menu ul li a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 10px 20px;
+        width: 100%; /* Volledige breedte van de knop */
+        text-align: center; /* Centreer tekst */
+    }
+
+    #nav-menu ul li a:hover {
+        background-color: #222;
+    }
+
+    .header-top,
+    .header-bottom {
+        height: auto;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo {
+        position: static;
+        top: 0;
+        left: 0;
+        margin-bottom: 10px;
+    }
+
+    .team-name {
+        font-size: 24px;
+        padding-left: 0;
+        text-align: center;
+        margin-left: 0;
+    }
+
+
+    nav {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        border-left: none;
+        width: 100%;
+        align-items: center;
+    }
+
+    nav ul li {
+        border-left: none;
+        width: 100%;
+    }
+
+    nav ul li:last-child {
+        border-right: none;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    /* Centrale uitlijning van het product op mobiel */
+    .shop-container {
+        display: flex;
+        flex-direction: column; /* Gebruik kolomrichting om items onder elkaar te plaatsen */
+        align-items: center;    /* Centreer inhoud horizontaal */
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    /* Product styling voor mobiel */
+    .product {
+        text-align: center;        /* Centreer tekst in het product */
+        width: 90%;                /* Verminder de breedte op mobiel voor meer ruimte */
+        margin: 0 auto;            /* Centreer het product */
+        padding: 10px;             /* Ruimte rondom het product */
+    }
+
+    /* Afbeelding in het product */
+    .product-image {
+        width: 100%;               /* Volledige breedte op mobiel */
+        max-width: 250px;          /* Beperking op maximale breedte voor betere weergave */
+        margin: 0 auto;            /* Centreer de afbeelding */
+    }
+
+    /* Productinformatie */
+    .info.item, .prijs {
+        font-size: 16px;           /* Iets kleiner lettertype op mobiel */
+        text-align: center;        /* Centreer tekst in info en prijs */
+        margin-top: 5px;           /* Ruimte tussen tekst en afbeelding */
+    }
+
+    /* Maak de knop Later Meer ook responsief */
+    .latermeer {
+        font-size: 30px;           /* Kleinere tekstgrootte voor mobiel */
+        margin-top: 20px;
+        margin-bottom: 100px;
+    }
 }

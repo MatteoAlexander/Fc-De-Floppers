@@ -17,7 +17,15 @@
                 <img src="images/logo.png" alt="Minivoetbalploeg Logo" class="logo-img">
             </div>
             <div class="team-name">Fc De Floppers</div>
-            <nav>
+    
+            <!-- Hamburger Menu Button: alleen zichtbaar op mobiel -->
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    
+            <!-- Nav Menu -->
+            <nav id="nav-menu">
+                <div class="logo-mobile">
+                    <img src="images/logo.png" alt="Minivoetbalploeg Logo" class="logo-img">
+                </div>
                 <ul>
                     <li><a href="/index.html">Home</a></li>
                     <li><a href="/html/DeFloppers.html">De Floppers</a></li>
@@ -243,6 +251,14 @@
         function nextImage() {
             currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
             updateImage();
+        }
+
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            const body = document.body; // Verkrijg de body
+        
+            navMenu.classList.toggle('active'); // Toggle de 'active' klasse
+            body.classList.toggle('menu-open'); // Toggle de 'menu-open' klasse op de body
         }
 
         // Laad de eerste afbeelding bij het laden van de pagina

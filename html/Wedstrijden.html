@@ -14,10 +14,18 @@
         <div class="header-top"></div>
         <div class="header-bottom">
             <div class="logo">
-                <img src="/images/Logo.png" alt="Minivoetbalploeg Logo" class="logo-img">
+                <img src="/images/logo.png" alt="Minivoetbalploeg Logo" class="logo-img">
             </div>
             <div class="team-name">Fc De Floppers</div>
-            <nav>
+    
+            <!-- Hamburger Menu Button: alleen zichtbaar op mobiel -->
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    
+            <!-- Nav Menu -->
+            <nav id="nav-menu">
+                <div class="logo-mobile">
+                    <img src="/images/logo.png" alt="Minivoetbalploeg Logo" class="logo-img">
+                </div>
                 <ul>
                     <li><a href="/index.html">Home</a></li>
                     <li><a href="/html/DeFloppers.html">De Floppers</a></li>
@@ -208,5 +216,14 @@
         </div>
         <p>&copy; Fc De Floppers Minivoetbalploeg Kern Gent. Alle rechten voorbehouden.</p>
     </footer>
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            const body = document.body; // Verkrijg de body
+        
+            navMenu.classList.toggle('active'); // Toggle de 'active' klasse
+            body.classList.toggle('menu-open'); // Toggle de 'menu-open' klasse op de body
+        }
+    </script>
 </body>
 </html>
