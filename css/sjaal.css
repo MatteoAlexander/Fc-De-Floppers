@@ -425,25 +425,6 @@ header {
         width: 100%;
         text-align: center;
     }
-
-    .hero-image {
-        height: 50vh; /* Lagere hoogte op mobiele schermen */
-    }
-
-    .players-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .player-square {
-        width: 100%;
-        height: auto;
-        flex-direction: column;
-    }
-
-    .player-photo {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
 }
 
 /* Standaard desktop stijlen (boven 768px) */

@@ -1,0 +1,381 @@
+/* Algemeen */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #121212;
+    color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.game-container {
+    margin-top: 120px; /* Voor ruimte onder de header */
+    text-align: center;
+    color: #f4f4f4;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+}
+
+/* Status en Titel */
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: "Oswald", sans-serif;
+}
+
+#status {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Bord */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.cell {
+    background-color: #333;
+    color: #f4f4f4;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: #555;
+}
+
+/* Resetknop */
+#reset {
+    background-color: #f0f0f0;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#reset:hover {
+    background-color: #ddd;
+}
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Zorg ervoor dat de header vast blijft */
+    top: 0; /* Plaats de header aan de bovenkant */
+    left: 0; /* Zorg ervoor dat de header links begint */
+    right: 0; /* Zorg ervoor dat de header naar rechts uitstrekt */
+    z-index: 1000; /* Zorg ervoor dat de header boven andere elementen staat */
+}
+
+/* Top white section with lighter color */
+.header-top {
+    background-color: #f0f0f0ee;
+    height: 25px;
+    width: 100%;
+    z-index: 1; /* Ensure it's on top */
+}
+
+.header-bottom {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 50px;
+    position: relative;
+    border-bottom: 1px solid gray;
+}
+
+/* Logo-container */
+.logo {
+    position: absolute; /* Zorgt ervoor dat het logo vrij kan bewegen binnen de header */
+    top: -25px; /* Verhoogt de positie van het logo (verander dit indien nodig) */
+    left: 40px; /* Houdt het logo aan de linkerzijde */
+    z-index: 10; /* Zorgt ervoor dat het logo boven andere elementen staat */
+}
+
+.logo-img {
+    max-width: 80px; /* Pas de grootte aan indien nodig */
+    height: auto;
+}
+
+.team-name {
+    color: white; /* Witte kleur voor de tekst */
+    font-size: 30px; /* Pas de lettergrootte aan indien nodig */
+    margin-left: 20px; /* Ruimte tussen logo en tekst */
+    padding-left: 100px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* Navigation bar styling */
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: 160px;
+    height: 100%; /* Zorg dat de navigatie de volledige hoogte van de header vult */
+}
+
+nav ul {
+    display: flex;
+    height: 100%; /* Zorg ervoor dat de ul de volledige hoogte vult */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 1px solid gray; /* Voeg deze regel toe */
+}
+
+/* Zorg ervoor dat elk item de volledige hoogte van de header vult en horizontaal verdeeld is */
+nav ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Zorg dat de li's de volledige hoogte van de header vullen */
+    border-left: 1px solid gray;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0 20px;
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Verticaal centreren van de tekst */
+    height: 100%; /* Zorg ervoor dat de links de volledige hoogte vullen */
+    box-sizing: border-box; /* Zorg ervoor dat borders en padding correct worden berekend */
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* Verwijder de border bij het eerste item */
+nav ul li:first-child {
+    border-left: none;
+}
+
+/* Voeg een rechter border toe aan het laatste item */
+nav ul li:last-child {
+    border-right: 1px solid white;
+}
+
+/* Hover-effect voor navigatie-items */
+nav ul li a:hover {
+    background-color: #555; /* Grijze achtergrondkleur bij hover */
+    transition: background-color 0.3s ease;
+}
+
+/* Ensure items are evenly spaced and aligned */
+nav ul li {
+    margin: 0;
+}
+
+/*
+***********************************************
+GSM instellingen
+***********************************************
+*/
+
+
+.logo-mobile {
+    display: none; /* Standaard niet zichtbaar */
+}
+
+.header-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+body {
+    margin: 0;
+    height: auto; /* Laat de hoogte automatisch zijn */
+    overflow: auto; /* Zorg ervoor dat de body kan scrollen */
+}
+
+body.menu-open {
+    overflow: hidden; /* Voorkom scrollen als het menu open is */
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 12px;
+    z-index: 1000;
+}
+
+/* Menu stijlen voor mobiel */
+#nav-menu {
+    display: flex; /* Standaard zichtbaar op desktop */
+}
+
+/* Responsieve aanpassingen voor kleinere schermen */
+@media (max-width: 768px) {
+       /* Verbeterde stijlen voor de body */
+       body {
+        margin: 0;
+        height: 100vh; /* Zorg ervoor dat de body de volledige hoogte heeft */
+        overflow: auto; /* Voorkom scrollen */
+    }
+
+    header {
+        width: 100vw; /* Neem de volledige breedte van het scherm */
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        padding: 0; /* Verwijder eventuele padding */
+    }
+
+    .menu-toggle {
+        display: block; /* Toon hamburgerknop op mobiel */
+    }
+
+    #nav-menu {
+        display: none; /* Begin met verbergen */
+        position: fixed; /* Zorg ervoor dat het menu het scherm bedekt */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; /* Maak het menu de volledige hoogte */
+        background-color: black;
+        flex-direction: column;
+        padding: 0;
+        z-index: 900;
+        justify-content: flex-start; /* Centreer de inhoud */
+        align-items: center; /* Centreer de inhoud */
+        overflow: auto;
+    }
+
+    /* Wanneer het menu zichtbaar is */
+    #nav-menu.active {
+        display: flex; /* Toon het menu */
+    }
+
+    .logo-mobile {
+        display: block;
+        margin: 20px 0; /* Voeg wat marge toe rond het logo */
+        text-align: center; /* Centreer het logo */
+    }
+
+    /* Layout header */
+    .header-bottom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 175px;
+    }
+
+    
+
+    .team-name {
+        color: white;
+        font-size: 24px;
+        margin-top: 0px;
+        margin-right: 30px;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    /* Zorg dat navigatie links uitgelijnd is */
+    #nav-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column; /* Zorg voor kolomuitlijning */
+        align-items: center; /* Centreer links */
+    }
+
+    #nav-menu ul li {
+        width: 100%; /* Volledige breedte */
+        padding: 15px;
+        border-bottom: 1px solid #333;
+    }
+
+    #nav-menu ul li a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 10px 20px;
+        width: 100%; /* Volledige breedte van de knop */
+        text-align: center; /* Centreer tekst */
+    }
+
+    #nav-menu ul li a:hover {
+        background-color: #222;
+    }
+
+    .header-top,
+.header-bottom {
+    width: 100%; /* Zorg ervoor dat de secties binnen de header de volledige breedte innemen */
+    box-sizing: border-box; /* Voorkom dat padding invloed heeft op de breedte */
+}
+
+    .logo {
+        position: static;
+        top: 0;
+        left: 0;
+        margin-bottom: 10px;
+        margin-left: 190px;
+    }
+
+    nav {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        border-left: none;
+        width: 100%;
+        align-items: center;
+    }
+
+    nav ul li {
+        border-left: none;
+        width: 100%;
+    }
+
+    nav ul li:last-child {
+        border-right: none;
+    }
+
+    .game-container {
+        margin-top: 250px;
+        width: 90%; /* Neem meer breedte op kleine schermen */
+    }
+
+    .cell {
+        height: 60px; /* Iets kleinere cellen op mobiel */
+        font-size: 20px;
+    }
+}
