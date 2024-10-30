@@ -237,22 +237,17 @@ body.menu-open {
 
 /* Responsieve aanpassingen voor kleinere schermen */
 @media (max-width: 768px) {
-       /* Verbeterde stijlen voor de body */
-       body {
+      /* Verbeterde stijlen voor de body */
+      body {
         margin: 0;
         height: 100vh; /* Zorg ervoor dat de body de volledige hoogte heeft */
         overflow: auto; /* Voorkom scrollen */
     }
 
     header {
-        width: 100vw; /* Neem de volledige breedte van het scherm */
-        position: fixed;
-        top: 0;
-        left: 0;
+        position: relative;
         z-index: 1000;
-        display: flex;
-        flex-direction: column;
-        padding: 0; /* Verwijder eventuele padding */
+        width: 100%;
     }
 
     .menu-toggle {
@@ -291,18 +286,16 @@ body.menu-open {
         display: flex;
         flex-direction: row;
         align-items: center;
-        height: 175px;
+        padding: 10px;
     }
 
-    
+    .logo {
+        margin-right: 20px 0;
+    }
 
     .team-name {
         color: white;
-        font-size: 24px;
-        margin-top: 0px;
-        margin-right: 30px;
-        text-align: center;
-        padding-left: 0;
+        font-size: 18px;
     }
 
     /* Zorg dat navigatie links uitgelijnd is */
@@ -335,18 +328,28 @@ body.menu-open {
     }
 
     .header-top,
-.header-bottom {
-    width: 100%; /* Zorg ervoor dat de secties binnen de header de volledige breedte innemen */
-    box-sizing: border-box; /* Voorkom dat padding invloed heeft op de breedte */
-}
+    .header-bottom {
+        height: auto;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
     .logo {
         position: static;
         top: 0;
         left: 0;
         margin-bottom: 10px;
-        margin-left: 190px;
     }
+
+    .team-name {
+        font-size: 24px;
+        padding-left: 0;
+        text-align: center;
+        margin-left: 0;
+    }
+
 
     nav {
         margin-left: 0;
@@ -370,8 +373,8 @@ body.menu-open {
     }
 
     .game-container {
-        margin-top: 250px;
-        width: 90%; /* Neem meer breedte op kleine schermen */
+        margin-top: 50px;
+        width: 70%; /* Neem meer breedte op kleine schermen */
     }
 
     .cell {

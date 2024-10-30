@@ -518,112 +518,141 @@ header {
 
 /* Mobiele stijlen */
 @media (max-width: 768px) {
-    header {
-        position: relative;
-        z-index: 1000;
+        /* Verbeterde stijlen voor de body */
+        body {
+            margin: 0;
+            height: 100vh; /* Zorg ervoor dat de body de volledige hoogte heeft */
+            overflow: auto; /* Voorkom scrollen */
+        }
+    
+        header {
+            position: relative;
+            z-index: 1000;
+            width: 100%;
+        }
+    
+        .menu-toggle {
+            display: block; /* Toon hamburgerknop op mobiel */
+        }
+    
+        #nav-menu {
+            display: none; /* Begin met verbergen */
+            position: fixed; /* Zorg ervoor dat het menu het scherm bedekt */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* Maak het menu de volledige hoogte */
+            background-color: black;
+            flex-direction: column;
+            padding: 0;
+            z-index: 900;
+            justify-content: flex-start; /* Centreer de inhoud */
+            align-items: center; /* Centreer de inhoud */
+            overflow: auto;
+        }
+    
+        /* Wanneer het menu zichtbaar is */
+        #nav-menu.active {
+            display: flex; /* Toon het menu */
+        }
+    
+        .logo-mobile {
+            display: block;
+            margin: 20px 0; /* Voeg wat marge toe rond het logo */
+            text-align: center; /* Centreer het logo */
+        }
+    
+        /* Layout header */
+        .header-bottom {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px;
+        }
+    
+        .logo {
+            margin-right: 20px 0;
+        }
+    
+        .team-name {
+            color: white;
+            font-size: 18px;
+        }
+    
+        /* Zorg dat navigatie links uitgelijnd is */
+        #nav-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column; /* Zorg voor kolomuitlijning */
+            align-items: center; /* Centreer links */
+        }
+    
+        #nav-menu ul li {
+            width: 100%; /* Volledige breedte */
+            padding: 15px;
+            border-bottom: 1px solid #333;
+        }
+    
+        #nav-menu ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            width: 100%; /* Volledige breedte van de knop */
+            text-align: center; /* Centreer tekst */
+        }
+    
+        #nav-menu ul li a:hover {
+            background-color: #222;
+        }
+    
+        .header-top,
+        .header-bottom {
+            height: auto;
+            padding: 10px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    
+        .logo {
+            position: static;
+            top: 0;
+            left: 0;
+            margin-bottom: 10px;
+        }
+    
+        .team-name {
+            font-size: 24px;
+            padding-left: 0;
+            text-align: center;
+            margin-left: 0;
+        }
+    
+    
+        nav {
+            margin-left: 0;
+            padding: 10px 0;
+        }
+    
+        nav ul {
+            flex-direction: column;
+            border-left: none;
+            width: 100%;
+            align-items: center;
+        }
+    
+        nav ul li {
+            border-left: none;
+            width: 100%;
+        }
+    
+        nav ul li:last-child {
+            border-right: none;
+        }
     }
-
-    .menu-toggle {
-        display: block;
-        font-size: 24px;
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-        position: absolute;
-        left: 20px;
-        top: 12px;
-        z-index: 1000;
-    }
-
-    #nav-menu {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        flex-direction: column;
-        padding: 0;
-        z-index: 900;
-        justify-content: flex-start;
-        align-items: center;
-        overflow: auto;
-    }
-
-    #nav-menu.active {
-        display: flex;
-    }
-
-    .header-top,
-    .header-bottom {
-        height: auto;
-        padding: 10px;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .logo {
-        position: static;
-        top: 0;
-        left: 0;
-        margin-bottom: 10px;
-    }
-
-    .team-name {
-        font-size: 18px;
-        text-align: center;
-        margin-left: 0;
-    }
-
-    nav {
-        margin-left: 0;
-        padding: 10px 0;
-    }
-
-    nav ul {
-        flex-direction: column;
-        border-left: none;
-        width: 100%;
-        align-items: center;
-    }
-
-    nav ul li {
-        width: 100%;
-        padding: 15px;
-        border-bottom: 1px solid #333;
-    }
-
-    nav ul li a {
-        color: white;
-        text-decoration: none;
-        display: block;
-        padding: 10px 20px;
-        width: 100%;
-        text-align: center;
-    }
-
-    .hero-image {
-        height: 50vh; /* Lagere hoogte op mobiele schermen */
-    }
-
-    .players-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .player-square {
-        width: 100%;
-        height: auto;
-        flex-direction: column;
-    }
-
-    .player-photo {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-}
 
 /* Standaard desktop stijlen (boven 768px) */
 @media (min-width: 769px) {
