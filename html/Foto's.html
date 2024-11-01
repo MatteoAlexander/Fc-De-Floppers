@@ -203,6 +203,19 @@ function toggleMenu() {
         body.classList.toggle('menu-open'); // Toggle de 'menu-open' klasse op de body
 }
 
+let observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.getAttribute('data-src');
+        observer.unobserve(img);
+      }
+    });
+  });
+  document.querySelectorAll('img[data-src]').forEach(img => {
+    observer.observe(img);
+  });
+  
     </script>
     <div id="myModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
