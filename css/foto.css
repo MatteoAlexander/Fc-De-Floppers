@@ -28,7 +28,7 @@ header {
 
 /* Top white section with lighter color */
 .header-top {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0ee;
     height: 25px;
     width: 100%;
     z-index: 1; /* Ensure it's on top */
@@ -46,7 +46,6 @@ header {
 }
 
 /* Logo-container */
-/* Logo styling to place it on both white and black sections */
 .logo {
     position: absolute; /* Zorgt ervoor dat het logo vrij kan bewegen binnen de header */
     top: -25px; /* Verhoogt de positie van het logo (verander dit indien nodig) */
@@ -55,7 +54,7 @@ header {
 }
 
 .logo-img {
-    max-width: 80px; /* Adjust size to your preference */
+    max-width: 80px; /* Pas de grootte aan indien nodig */
     height: auto;
 }
 
@@ -65,6 +64,8 @@ header {
     margin-left: 20px; /* Ruimte tussen logo en tekst */
     padding-left: 100px;
     font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 /* Navigation bar styling */
@@ -76,7 +77,6 @@ nav {
     height: 100%; /* Zorg dat de navigatie de volledige hoogte van de header vult */
 }
 
-/* Navigation bar styling */
 nav ul {
     display: flex;
     height: 100%; /* Zorg ervoor dat de ul de volledige hoogte vult */
@@ -106,6 +106,9 @@ nav ul li a {
     height: 100%; /* Zorg ervoor dat de links de volledige hoogte vullen */
     box-sizing: border-box; /* Zorg ervoor dat borders en padding correct worden berekend */
     font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    justify-content: center;
 }
 
 /* Verwijder de border bij het eerste item */
@@ -115,40 +118,81 @@ nav ul li:first-child {
 
 /* Voeg een rechter border toe aan het laatste item */
 nav ul li:last-child {
-    border-right: 1px solid white;
+    border-right: 1px solid gray;
 }
 
 /* Hover-effect voor navigatie-items */
-nav ul li a:hover {
+nav ul li:hover {
     background-color: #555; /* Grijze achtergrondkleur bij hover */
     transition: background-color 0.3s ease;
 }
-
 /* Ensure items are evenly spaced and aligned */
 nav ul li {
     margin: 0;
 }
+/*###################################################*/
 
-
-/* Hero afbeelding - gestrekt over de volledige breedte zonder bijsnijden */
-.hero-image {
-    overflow: hidden; /* Zorg ervoor dat bijsnijden plaatsvindt */
-    height: calc(110vh); /* Geef een vaste hoogte aan de hero afbeelding, inclusief de 60px voor bijsnijden */
-    position: relative; /* Maak het mogelijk om de afbeelding te positioneren binnen deze container */
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
 }
 
-.hero-image img {
-    width: 100vw; /* De afbeelding neemt de volledige breedte van het scherm */
-    height: auto; /* Houdt de hoogte proportioneel */
-    object-fit: cover; /* Zorgt ervoor dat de afbeelding proportioneel wordt weergegeven */
-    display: block; /* Verwijder ongewenste witruimte onder de afbeelding */
-    margin: 0; /* Verwijder marges van de afbeelding */
-    padding: 0; /* Verwijder padding van de afbeelding */
-    position: absolute; /* Maak het mogelijk om de afbeelding te verplaatsen */
-    top: 0; /* Standaard top */
-    transition: opacity 0.5s ease; /* Voeg een overgang toe voor de opacity */
-    opacity: 0; /* Begin met een onzichtbare afbeelding */
+/* Dropdown menu */
+.dropdown-menu {
+    display: none; /* Verberg het menu standaard */
+    position: absolute;
+    top: 100%; /* Plaats het onder de hoofdoptie */
+    left: 0;
+    background-color: black; /* Zelfde stijl als de header */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid gray;
+    width: 100px; /* Breedte van het menu, consistent met "Extra" */
+    box-sizing: border-box; /* Zorg dat padding niet buiten de breedte valt */
 }
+
+.dropdown-menu li:first-child {
+    border-top: 1px solid gray; /* Voeg een border bovenaan toe */
+}
+
+.dropdown-menu li:last-child a {
+    background-color: black; /* Zorg voor een volledige zwarte achtergrond */
+    opacity: 1; /* Geen transparantie */
+}
+
+/* Stijl voor dropdown-items */
+.dropdown-menu li {
+    border-bottom: 1px solid gray;
+    text-align: center; /* Zorg dat de tekst gecentreerd blijft */
+}
+
+.dropdown-menu li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    width: 100px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #555;
+    transition: background-color 0.3s ease;
+    text-decoration: underline;
+}
+
+/* Toon het dropdown-menu bij hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/*###################################################*/
 
 /* Stijlen voor de rest van de pagina */
 main {
@@ -365,7 +409,16 @@ VASTE WAARDEN
 GSM instellingen
 ***********************************************
 */
+/* Verberg desktop-only items standaard */
+.desktop-only {
+    display: block;
+    border-right: 1px solid gray;
+}
 
+/* Verberg mobile-only items standaard */
+.mobile-only {
+    display: none;
+}
 
 .logo-mobile {
     display: none; /* Standaard niet zichtbaar */
@@ -412,6 +465,16 @@ body.menu-open {
         margin: 0;
         height: 100vh; /* Zorg ervoor dat de body de volledige hoogte heeft */
         overflow: auto; /* Voorkom scrollen */
+    }
+
+    .desktop-only {
+        display: none;
+        border-right: none;
+    }
+
+    /* Toon de mobiele opties */
+    .mobile-only {
+        display: block;
     }
 
     header {
@@ -490,10 +553,6 @@ body.menu-open {
         padding: 10px 20px;
         width: 100%; /* Volledige breedte van de knop */
         text-align: center; /* Centreer tekst */
-    }
-
-    #nav-menu ul li a:hover {
-        background-color: #222;
     }
 
     .header-top,

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floppers sjaal</title>
-    <link rel="stylesheet" href="/css/sjaal.css">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/css/Sponsors.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
@@ -52,29 +52,49 @@
         </div>
     </header>
     <main>
-        <a href="/html/Shop.html" class="close-button">✖</a>
-        <div class="content-container">
-            <div class="left-half">
-                <img src="/images/shopitem.png" alt="Supportersjaal" class="product-image">
+        
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Navigatie</h3>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/html/DeFloppers.html">De Floppers</a></li>
+                    <li><a href="/html/Wedstrijden.html">Wedstrijden</a></li>
+                    <li><a href="/html/Shop.html">Shop</a></li>
+                    <li><a href="/html/Foto's.html">Foto's</a></li>
+                    <li><a href="/html/contact.html">Contact</a></li>
+                </ul>
             </div>
-            <div class="right-half">
-                <h1 class="product-title">Fc De Floppers Supportersjaal</h1>
-                <p class="product-description">Steun jouw favoriete team met deze exclusieve supportersjaal! 
-                    Perfect voor op de tribune of om te dragen tijdens de winter. Laat zien dat je een echte Flopper bent!</p>
-                <p class="product-price">Prijs: €10</p>
-                <img class="uitverkocht" src="/images/recht.png" alt="uitverkocht">
+            <div class="footer-column">
+                <h3>Socials</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/fc_de_floppers/">
+                        <img src="/images/insta.webp" alt="Instagram" class="social-icon">Instagram</a></li>
+                    <li><a href="https://www.voetbalvlaanderen.be/club/9454/info">
+                        <img src="/images/voetbalvlaanderen.png" alt="Voetbal Vlaanderen" class="social-icon">Voetbal Vlaanderen</a></li>
+                    <li><a href="https://open.spotify.com/playlist/2PvnE4jCJdAONfs1eFgavf?si=c594747ff08c4bb8">
+                        <img src="/images/spotify.png" alt="Spotify" class="social-icon">Spotify</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contacteer ons</h3>
+                <p>E-mail: <a href="mailto:fcdefloppers@gmail.com">fcdefloppers@gmail.com</a></p>
+                <br>
+                <p>Telefoon: <a href="tel:+32468292747">+32468292747</a></p>
             </div>
         </div>
-    </main>
-    
+        <p>&copy; Fc De Floppers Minivoetbalploeg Kern Gent. Alle rechten voorbehouden.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            const body = document.body; // Verkrijg de body
+        
+            navMenu.classList.toggle('active'); // Toggle de 'active' klasse
+            body.classList.toggle('menu-open'); // Toggle de 'menu-open' klasse op de body
+        }
+    </script>
 </body>
-<script>
-    function toggleMenu() {
-        const navMenu = document.getElementById('nav-menu');
-        const body = document.body; // Verkrijg de body
-    
-        navMenu.classList.toggle('active'); // Toggle de 'active' klasse
-        body.classList.toggle('menu-open'); // Toggle de 'menu-open' klasse op de body
-    }
-</script>
 </html>
