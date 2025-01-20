@@ -1,4 +1,199 @@
 /* Algemeen */
+
+
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #f4f4f4;
+    min-height: 100vh; /* Zorg ervoor dat de body ten minste de volledige hoogte van het scherm heeft */
+    display: flex;
+    flex-direction: column; /* Gebruik flexbox om de elementen binnen de body te positioneren */
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Zorg ervoor dat de header vast blijft */
+    top: 0; /* Plaats de header aan de bovenkant */
+    left: 0; /* Zorg ervoor dat de header links begint */
+    right: 0; /* Zorg ervoor dat de header naar rechts uitstrekt */
+    z-index: 1000; /* Zorg ervoor dat de header boven andere elementen staat */
+}
+
+/* Top white section with lighter color */
+.header-top {
+    background-color: #f0f0f0ee;
+    height: 25px;
+    width: 100%;
+    z-index: 1; /* Ensure it's on top */
+}
+
+.header-bottom {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 50px;
+    position: relative;
+    border-bottom: 1px solid gray;
+}
+
+/* Logo-container */
+.logo {
+    position: absolute; /* Zorgt ervoor dat het logo vrij kan bewegen binnen de header */
+    top: -25px; /* Verhoogt de positie van het logo (verander dit indien nodig) */
+    left: 40px; /* Houdt het logo aan de linkerzijde */
+    z-index: 10; /* Zorgt ervoor dat het logo boven andere elementen staat */
+}
+
+.logo-img {
+    max-width: 80px; /* Pas de grootte aan indien nodig */
+    height: auto;
+}
+
+.team-name {
+    color: white; /* Witte kleur voor de tekst */
+    font-size: 30px; /* Pas de lettergrootte aan indien nodig */
+    margin-left: 20px; /* Ruimte tussen logo en tekst */
+    padding-left: 100px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* Navigation bar styling */
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: 160px;
+    height: 100%; /* Zorg dat de navigatie de volledige hoogte van de header vult */
+}
+
+nav ul {
+    display: flex;
+    height: 100%; /* Zorg ervoor dat de ul de volledige hoogte vult */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 1px solid gray; /* Voeg deze regel toe */
+}
+
+/* Zorg ervoor dat elk item de volledige hoogte van de header vult en horizontaal verdeeld is */
+nav ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Zorg dat de li's de volledige hoogte van de header vullen */
+    border-left: 1px solid gray;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0 20px;
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Verticaal centreren van de tekst */
+    height: 100%; /* Zorg ervoor dat de links de volledige hoogte vullen */
+    box-sizing: border-box; /* Zorg ervoor dat borders en padding correct worden berekend */
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    justify-content: center;
+}
+
+/* Verwijder de border bij het eerste item */
+nav ul li:first-child {
+    border-left: none;
+}
+
+/* Voeg een rechter border toe aan het laatste item */
+nav ul li:last-child {
+    border-right: 1px solid gray;
+}
+
+/* Hover-effect voor navigatie-items */
+nav ul li:hover {
+    background-color: #555; /* Grijze achtergrondkleur bij hover */
+    transition: background-color 0.3s ease;
+}
+/* Ensure items are evenly spaced and aligned */
+nav ul li {
+    margin: 0;
+}
+/*###################################################*/
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none; /* Verberg het menu standaard */
+    position: absolute;
+    top: 100%; /* Plaats het onder de hoofdoptie */
+    left: 0;
+    background-color: black; /* Zelfde stijl als de header */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid gray;
+    width: 100px; /* Breedte van het menu, consistent met "Extra" */
+    box-sizing: border-box; /* Zorg dat padding niet buiten de breedte valt */
+}
+
+.dropdown-menu li:first-child {
+    border-top: 1px solid gray; /* Voeg een border bovenaan toe */
+}
+
+.dropdown-menu li:last-child a {
+    background-color: black; /* Zorg voor een volledige zwarte achtergrond */
+    opacity: 1; /* Geen transparantie */
+}
+
+/* Stijl voor dropdown-items */
+.dropdown-menu li {
+    border-bottom: 1px solid gray;
+    text-align: center; /* Zorg dat de tekst gecentreerd blijft */
+}
+
+.dropdown-menu li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    width: 100px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #555;
+    transition: background-color 0.3s ease;
+    text-decoration: underline;
+}
+
+/* Toon het dropdown-menu bij hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -176,7 +371,7 @@ nav ul li:first-child {
 
 /* Voeg een rechter border toe aan het laatste item */
 nav ul li:last-child {
-    border-right: 1px solid white;
+    border-right: 1px solid gray;
 }
 
 /* Hover-effect voor navigatie-items */

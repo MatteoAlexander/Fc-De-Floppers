@@ -194,6 +194,7 @@ nav ul li {
 
 /*###################################################*/
 
+
 /* Stijlen voor de rest van de pagina */
 main {
     padding: 80px 40px; /* Ruimte toegevoegd om de header niet te overlappen */
@@ -280,77 +281,6 @@ footer a:hover {
     vertical-align: middle;
 }
 
-/* Pijlen voor de afbeelding wisselaar */
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 50px; /* Pas de grootte van de pijlen aan indien nodig */
-    color: white;
-    cursor: pointer;
-    user-select: none; /* Voorkomt dat de tekst wordt geselecteerd */
-    z-index: 1; /* Zorgt ervoor dat de pijlen boven de afbeelding staan */
-}
-
-.arrow.left {
-    left: 20px; /* Positie van de linkerpijl */
-}
-
-.arrow.right {
-    right: 20px; /* Positie van de rechterpijl */
-}
-
-/* Stijlen voor de wedstrijd-box */
-.wedstrijd-box {
-    flex: 1; /* Zorg ervoor dat de wedstrijd-box de resterende ruimte opvult */
-    background-color: #1e1e1e;
-    color: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 550px;
-    border: 2px solid white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-width: 150px;
-    height: 150px; /* Zorg voor een vaste hoogte voor alle teams zodat ze gelijk staan */
-}
-
-.team img {
-    max-width: 100px;  /* Beperk de maximale breedte van de afbeeldingen */
-    max-height: 100px; /* Beperk de maximale hoogte van de afbeeldingen */
-    object-fit: contain; /* Zorg dat de afbeelding proportioneel blijft */
-    margin-bottom: 10px; /* Wat ruimte tussen de afbeelding en de teamnaam */
-}
-
-.team-left{
-    margin-top: 30px;
-}
-
-.name-right{
-    margin-top: 10px;
-}
-
-.wedstrijd-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    height: 150px; /* Zorg ervoor dat de team-container een vaste hoogte heeft */
-}
-
-.team-name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px; /* Vaste hoogte voor de teamnaam zodat ze altijd gelijk staan */
-}
 
 .vs {
     font-size: 30px;
@@ -359,46 +289,7 @@ footer a:hover {
     margin: 0 20px;
 }
 
-.wedstrijd-info {
-    text-align: left;  /* Tekst uitlijnen naar links */
-    font-size: 16px;
-    line-height: 1.5;
-}
 
-.wedstrijd-info p {
-    margin: 5px 0;  /* Voeg wat marges toe tussen de regels */
-}
-
-.wedstrijd-info span {
-    color: #f4f4f4;  /* Rood voor speciale details zoals speeldag */
-}
-
-/* Stijlen voor de wedstrijd-container */
-.wedstrijd-container {
-    display: flex; /* Gebruik flexbox om de afbeeldingen en wedstrijd-box op een rij te zetten */
-    justify-content: center; /* Zorg ervoor dat alles in het midden staat */
-    align-items: center; /* Verticaal centreren van de inhoud */
-    gap: 40px; /* Voeg meer ruimte toe tussen de afbeeldingen en de wedstrijd-box */
-    margin-top: 40px; /* Voeg marge toe aan de bovenkant van de container voor wat ruimte */
-    max-width: 2000px; /* Maximaliseer de breedte van de container */
-    margin-left: auto; /* Center de container horizontaal */
-    margin-right: auto; /* Center de container horizontaal */
-}
-
-/* Aanpassingen voor de afbeeldingen aan de linker en rechterkant */
-.image-left, .image-right {
-    flex: 0 0 200px; /* Vergroot de flex-basis voor de zij-afbeeldingen */
-    text-align: center;
-}
-
-/* Aanpassingen voor de afbeeldingen zelf */
-.image-left img, .image-right img {
-    max-width: 300px; /* Verhoog de maximale breedte van de afbeeldingen */
-    max-height: 300px; /* Verhoog de maximale hoogte van de afbeeldingen */
-    width: auto; /* Behoud de verhoudingen van de afbeeldingen */
-    height: auto;
-    object-fit: contain; /* Zorg ervoor dat de afbeeldingen binnen de container blijven zonder vervormd te worden */
-}
 
 /*#######################################################################################""
 VASTE WAARDEN
@@ -436,55 +327,70 @@ a:hover {
     text-decoration: underline;
 }
 
-.contact-info p::before,
-.correspondent-info p::before {
-    content: "-"; /* Voeg een liggend streepje toe */
-    color: white; /* Kleur van het streepje */
-    margin-right: 30px;
-}
 
 h2{
     padding-top: 50px;
 }
 
-.photo {
-    max-width: 200px; /* Pas de maximale breedte van de foto aan */
-    max-height: 200px; /* Pas de maximale hoogte van de foto aan */
-    object-fit: contain; /* Zorg ervoor dat de afbeelding proportioneel blijft */
+h2 {
+    color: #ffffff; /* Witte kleur voor de koptekst */
+    margin-top: 90px; /* Verhoog de bovenmarge van de koptekst */
+    margin-bottom: 20px; /* Houd de ondermarge op 20px */
 }
 
-.contact-container {
-    display: flex; /* Gebruik flexbox om de elementen naast elkaar te plaatsen */
-    justify-content: flex-start; /* Zorg ervoor dat ze aan de uiteinden van de container worden geplaatst */
-    align-items: flex-start;
+/* Stijlen voor de tabel */
+table {
+    width: 80%; /* Zorg ervoor dat de tabel dezelfde breedte heeft als de titel */
+    max-width: 800px;
+    border-collapse: collapse;
+    margin: 20px auto; /* Zorgt voor ruimte boven en onder en centreert de tabel */
+    padding: 0; /* Verwijder padding zodat de tekst van de tabel uitgelijnd is met de titel */
 }
 
-
-.correspondent-photo {
-    flex: 0 0 200px; /* Geef de foto een vaste breedte, zodat deze niet gaat verspringen */
-    margin-left: 20px; /* Voeg marge toe aan de linkerzijde van de foto */
+th, td {
+    border: 1px solid #dddddd; /* Lichte rand */
+    text-align: left; /* Tekst links uitlijnen */
+    padding: 10px; /* Ruimte rond de tekst */
 }
 
-.photo {
-    max-width: 100%; /* Laat de foto zich aanpassen aan de container */
-    height: auto; /* Houd de hoogte proportioneel */
-    padding-left: 150px;
+th {
+    background-color: #2c2c2c; /* Donkerder grijs voor de koppen */
 }
 
-.contact-info, .correspondent-info {
-    flex: 1; /* Zorg ervoor dat beide secties de beschikbare ruimte gelijk verdelen */
-    margin-right: 20px; /* Voeg ruimte toe tussen de contactinformatie en correspondent-informatie */
+/* Optionele stijl voor even rijen */
+tr:nth-child(even) {
+    background-color: #242424; /* Een lichtere schaduw voor even rijen */
 }
 
-.contact-info {
-    display: flex; /* Maak deze sectie een flex-container */
-    flex-wrap: wrap; /* Dit zorgt ervoor dat de elementen naar de volgende regel verhuizen als ze niet passen */
+.topscorer {
+    font-size: 30px;
+    color: #ffffff;
+    text-align: left; /* Links uitlijnen zodat het op één lijn staat met de tabel */
+    margin: 100px auto 30px auto; /* 50px marge bovenaan voor extra ruimte, 20px onderaan */
+    width: 80%; /* Zorg ervoor dat de breedte van de titel gelijk is aan de breedte van de tabel */
+    max-width: 800px; /* Voeg dezelfde max-breedte toe als de tabel */
 }
 
-.contact-info p {
-    line-height: normal; /* Optioneel: Dit zorgt ervoor dat de regels bij elkaar blijven */
+.afgelopen {
+    font-size: 25px;
+    color: #ffffff;
+    text-align: left; /* Links uitlijnen zodat het op één lijn staat met de tabel */
+    margin: 100px auto 30px auto; /* 50px marge bovenaan voor extra ruimte, 20px onderaan */
+    width: 80%; /* Zorg ervoor dat de breedte van de titel gelijk is aan de breedte van de tabel */
+    max-width: 800px; /* Voeg dezelfde max-breedte toe als de tabel */
+    font-weight: bold;
 }
 
+.afgelopen a {
+    display: block; /* Zorgt ervoor dat de links als blokken worden weergegeven */
+    margin-bottom: 10px; /* Optioneel: Voegt ruimte toe tussen de links */
+    color: #ffffff; /* Behoud de witte kleur */
+    text-decoration: none; /* Verwijder standaard onderlijning */
+}
+
+.afgelopen a:hover {
+    text-decoration: underline; /* Onderlijning bij hover (optioneel) */
+}
 
 /*
 ***********************************************

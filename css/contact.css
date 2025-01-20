@@ -119,7 +119,7 @@ nav ul li:first-child {
 
 /* Voeg een rechter border toe aan het laatste item */
 nav ul li:last-child {
-    border-right: 1px solid white;
+    border-right: 1px solid gray;
 }
 
 /* Hover-effect voor navigatie-items */
