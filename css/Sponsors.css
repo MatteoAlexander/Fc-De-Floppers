@@ -194,32 +194,15 @@ nav ul li {
 
 /*###################################################*/
 
-/* Hero afbeelding - gestrekt over de volledige breedte zonder bijsnijden */
-.hero-image {
-    overflow: hidden; /* Zorg ervoor dat bijsnijden plaatsvindt */
-    height: calc(110vh); /* Geef een vaste hoogte aan de hero afbeelding, inclusief de 60px voor bijsnijden */
-    position: relative; /* Maak het mogelijk om de afbeelding te positioneren binnen deze container */
-}
-
-.hero-image img {
-    width: 100vw; /* De afbeelding neemt de volledige breedte van het scherm */
-    height: auto; /* Houdt de hoogte proportioneel */
-    object-fit: cover; /* Zorgt ervoor dat de afbeelding proportioneel wordt weergegeven */
-    display: block; /* Verwijder ongewenste witruimte onder de afbeelding */
-    margin: 0; /* Verwijder marges van de afbeelding */
-    padding: 0; /* Verwijder padding van de afbeelding */
-    position: absolute; /* Maak het mogelijk om de afbeelding te verplaatsen */
-    top: 0; /* Standaard top */
-    transition: opacity 0.5s ease; /* Voeg een overgang toe voor de opacity */
-    opacity: 0; /* Begin met een onzichtbare afbeelding */
-}
 
 /* Stijlen voor de rest van de pagina */
 main {
-    padding: 0;
-    text-align: center;
-    flex: 1; /* Zorgt ervoor dat het hoofdgedeelte de beschikbare ruimte opvult */
+    padding: 80px 40px; /* Ruimte toegevoegd om de header niet te overlappen */
+    text-align: left;
+    flex: 1;
 }
+
+
 
 footer {
     background-color: #333;
@@ -282,11 +265,11 @@ footer p {
     color: #aaa;
 }
 
-a {
+footer a {
     color: #f4f4f4;
 }
 
-a:hover {
+footer a:hover {
     color: #ddd;
     text-decoration: underline;
 }
@@ -328,8 +311,6 @@ a:hover {
     max-width: 550px;
     border: 2px solid white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    height: 350px; /* Vaste hoogte voor de wedstrijd-box */
 }
 
 .team {
@@ -349,16 +330,12 @@ a:hover {
     margin-bottom: 10px; /* Wat ruimte tussen de afbeelding en de teamnaam */
 }
 
-.team-left {
-    margin-top: 10px;
+.team-left{
+    margin-top: 30px;
 }
 
-.name-right {
+.name-right{
     margin-top: 10px;
-}
-
-.name-left {
-    margin-top: -1px;
 }
 
 .wedstrijd-details {
@@ -384,9 +361,8 @@ a:hover {
 }
 
 .wedstrijd-info {
-    text-align: center;  /* Tekst uitlijnen naar links */
-    font-size: 18px;
-    font-weight: bold;
+    text-align: left;  /* Tekst uitlijnen naar links */
+    font-size: 16px;
     line-height: 1.5;
 }
 
@@ -404,11 +380,10 @@ a:hover {
     justify-content: center; /* Zorg ervoor dat alles in het midden staat */
     align-items: center; /* Verticaal centreren van de inhoud */
     gap: 40px; /* Voeg meer ruimte toe tussen de afbeeldingen en de wedstrijd-box */
-    margin-top: 100px; /* Voeg marge toe aan de bovenkant van de container voor wat ruimte */
-    max-width: 1800px; /* Maximaliseer de breedte van de container */
+    margin-top: 40px; /* Voeg marge toe aan de bovenkant van de container voor wat ruimte */
+    max-width: 2000px; /* Maximaliseer de breedte van de container */
     margin-left: auto; /* Center de container horizontaal */
     margin-right: auto; /* Center de container horizontaal */
-    
 }
 
 /* Aanpassingen voor de afbeeldingen aan de linker en rechterkant */
@@ -426,220 +401,91 @@ a:hover {
     object-fit: contain; /* Zorg ervoor dat de afbeeldingen binnen de container blijven zonder vervormd te worden */
 }
 
-.countdown {
-    position: absolute; /* Zorgt dat het in de wedstrijd-box blijft */
-    bottom: 10px; /* Plaatst het 10px boven de onderkant */
-    right: 10px; /* Plaatst het 10px van de rechterkant */
-    background-color: rgba(0, 0, 0, 0.7); /* Zwarte achtergrond met doorzichtigheid */
-    color: #fff; /* Witte tekstkleur */
-    padding: 10px; /* Ruimte binnenin */
-    border-radius: 5px; /* Ronde hoeken */
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-}
+/*#######################################################################################""
+VASTE WAARDEN
+/*#######################################################################################""*/
 
-.countdown-timer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px; /* Ruimte rondom de klok */
-    border-radius: 10px; /* Ronde hoeken */
-}
 
-.countdown-item {
-    text-align: center;
-    margin: 0 10px; /* Ruimte tussen de items */
-}
-
-.countdown-number {
-    font-size: 24px; /* Grotere tekstgrootte voor de cijfers */
-    font-weight: bold; /* Vetgedrukte tekst voor cijfers */
-    color: white; /* Kleur van de cijfers */
-}
-
-.countdown-label {
-    font-size: 12px; /* Kleinere tekstgrootte voor de labels onder de cijfers */
-    color: white; /* Kleur van de labels */
-    display: block; /* Zorg ervoor dat de labels op een nieuwe regel staan */
-}
-
-.separator {
-    font-size: 16px; /* Zorg ervoor dat de separator dezelfde grootte heeft als de cijfers */
-    color: white; /* Kleur van de separator */
-    margin: 0 10px; /* Ruimte tussen de separator en de tijdselementen */
-}
-
-/*
-************************************
-deel1
-************************************
-*/
-/* Pas de floppersinfo-container aan om alleen verticale scrollen te gebruiken */
-.floppersinfo {
-    display: flex;
-    justify-content: flex-start; /* Gebruik flex-start in plaats van space-between */
-    align-items: center;
-    padding: 20px 40px;
-    gap: 40px;
-    width: 100%;
-    background-color: #f0f0f0ee;
-    color: #121212;
-    border-radius: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 150px;
-    
-}
-
-/* Extra instellingen voor tekst, afbeelding en paragrafen zoals eerder */
-.floppersinfo h2, .floppersinfo p {
-    margin: 0;
-    text-align: left;
-}
-
-.floppersinfo h2 {
-    margin-bottom: 50px;
-    font-size: 30px;
-}
-
-.floppersinfo p {
-    margin-bottom: 15px;
-    font-size: 16px; /* Pas de grootte aan naar wens, bijv. 18px */
-    line-height: 1.6; /* Zorg voor voldoende ruimte tussen de regels */
-}
-
-.floppersinfo img {
+.container {
     max-width: 600px;
-    max-height: 800px;
-    object-fit: contain;
-    margin-right: 150px;
-    margin-bottom: 70px;
-    margin-top: 70px;
+    margin: 20px auto;
+    padding: 20px 20px 20px 100px; /* Voeg hier wat padding aan de linkerkant toe */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Aligns content to the left */
+    display: flex; /* Maak gebruik van flexbox */
+    flex-direction: column; /* Zorg ervoor dat de container verticaal blijft */
 }
 
-.floppersinfo-text {
-    flex: 1;
-    max-width: 50%;
-   
+h1, h2 {
+    color: white; /* Een donkerdere kleur voor de koppen */
+    font-weight: bold;
 }
 
-.floppersinfo-wrapper {
-    margin-left: 100px;
-    flex: 1;
+
+p {
+    line-height: 1.6;
+    color: white; /* Lichtere kleur voor de paragrafen */
 }
 
-/*
-************************************
-deel2
-************************************
-*/
-
-.floppersinfo2 {
-    display: flex;
-    justify-content: flex-start; /* Gebruik flex-start in plaats van space-between */
-    align-items: center;
-    padding: 20px 40px;
-    gap: 80px;
-    width: 100%;
-    background-color: #121212;
-    color: #f4f4f4;
-    border-radius: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 0px;
+a {
+    text-decoration: none;
+    color: white;
 }
 
-/* Extra instellingen voor tekst, afbeelding en paragrafen zoals eerder */
-.floppersinfo2 h2, .floppersinfo2 p {
-    margin: 0;
-    text-align: left;
+a:hover {
+    text-decoration: underline;
 }
 
-.floppersinfo2 h2 {
-    margin-bottom: 50px;
-    font-size: 30px;
+.contact-info p::before,
+.correspondent-info p::before {
+    content: "-"; /* Voeg een liggend streepje toe */
+    color: white; /* Kleur van het streepje */
+    margin-right: 30px;
 }
 
-.floppersinfo2 p {
-    margin-bottom: 15px;
-    font-size: 16px; /* Pas de grootte aan naar wens, bijv. 18px */
-    line-height: 1.6; /* Zorg voor voldoende ruimte tussen de regels */
+h2{
+    padding-top: 50px;
 }
 
-.floppersinfo2 img {
-    max-width: 600px;
-    max-height: 800px;
-    object-fit: contain;
-    margin-left: 120px;
-    margin-right: 110px;
+.photo {
+    max-width: 200px; /* Pas de maximale breedte van de foto aan */
+    max-height: 200px; /* Pas de maximale hoogte van de foto aan */
+    object-fit: contain; /* Zorg ervoor dat de afbeelding proportioneel blijft */
 }
 
-.floppersinfo-text2 {
-    flex: 1;
-    max-width: 50%;
-   
+.contact-container {
+    display: flex; /* Gebruik flexbox om de elementen naast elkaar te plaatsen */
+    justify-content: flex-start; /* Zorg ervoor dat ze aan de uiteinden van de container worden geplaatst */
+    align-items: flex-start;
 }
 
-.floppersinfo-wrapper2 {
-    margin-right: 150px;
-    margin-bottom: 70px;
-    margin-top: 70px;
-    flex: 1;
+
+.correspondent-photo {
+    flex: 0 0 200px; /* Geef de foto een vaste breedte, zodat deze niet gaat verspringen */
+    margin-left: 20px; /* Voeg marge toe aan de linkerzijde van de foto */
 }
 
-/*
-************************************
-deel3
-************************************
-*/
-.floppersinfo3 {
-    display: flex;
-    justify-content: flex-start; /* Gebruik flex-start in plaats van space-between */
-    align-items: center;
-    padding: 20px 40px;
-    gap: 40px;
-    width: 100%;
-    background-color: #f0f0f0ee;
-    color: #121212;
-    border-radius: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    
+.photo {
+    max-width: 100%; /* Laat de foto zich aanpassen aan de container */
+    height: auto; /* Houd de hoogte proportioneel */
+    padding-left: 150px;
 }
 
-/* Extra instellingen voor tekst, afbeelding en paragrafen zoals eerder */
-.floppersinfo3 h2, .floppersinfo3 p {
-    margin: 0;
-    text-align: left;
+.contact-info, .correspondent-info {
+    flex: 1; /* Zorg ervoor dat beide secties de beschikbare ruimte gelijk verdelen */
+    margin-right: 20px; /* Voeg ruimte toe tussen de contactinformatie en correspondent-informatie */
 }
 
-.floppersinfo3 h2 {
-    margin-bottom: 50px;
-    font-size: 30px;
+.contact-info {
+    display: flex; /* Maak deze sectie een flex-container */
+    flex-wrap: wrap; /* Dit zorgt ervoor dat de elementen naar de volgende regel verhuizen als ze niet passen */
 }
 
-.floppersinfo3 p {
-    margin-bottom: 15px;
-    font-size: 16px; /* Pas de grootte aan naar wens, bijv. 18px */
-    line-height: 1.6; /* Zorg voor voldoende ruimte tussen de regels */
+.contact-info p {
+    line-height: normal; /* Optioneel: Dit zorgt ervoor dat de regels bij elkaar blijven */
 }
 
-.floppersinfo3 img {
-    max-width: 600px;
-    max-height: 800px;
-    object-fit: contain;
-    margin-right: 150px;
-    margin-bottom: 70px;
-    margin-top: 70px;
-}
-
-.floppersinfo-text3 {
-    flex: 1;
-    max-width: 50%;
-   
-}
-
-.floppersinfo-wrapper3 {
-    margin-left: 100px;
-    flex: 1;
-}
 
 /*
 ***********************************************
@@ -647,7 +493,6 @@ GSM instellingen
 ***********************************************
 */
 
-/* Verberg desktop-only items standaard */
 .desktop-only {
     display: block;
     border-right: 1px solid gray;
@@ -696,200 +541,190 @@ body.menu-open {
     display: flex; /* Standaard zichtbaar op desktop */
 }
 
-/* Responsieve aanpassingen voor kleinere schermen */
+/* Algemene stijlen */
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* Mobiele stijlen */
 @media (max-width: 768px) {
-       /* Verbeterde stijlen voor de body */
-       body {
-        margin: 0;
-        height: 100vh; /* Zorg ervoor dat de body de volledige hoogte heeft */
-        overflow: auto; /* Voorkom scrollen */
+        /* Verbeterde stijlen voor de body */
+        body {
+            margin: 0;
+            height: 100vh; /* Zorg ervoor dat de body de volledige hoogte heeft */
+            overflow: auto; /* Voorkom scrollen */
+        }
+
+        .desktop-only {
+            display: none;
+            border-right: none;
+        }
+    
+        /* Toon de mobiele opties */
+        .mobile-only {
+            display: block;
+        }
+    
+        header {
+            position: relative;
+            z-index: 1000;
+            width: 100%;
+        }
+    
+        .menu-toggle {
+            display: block; /* Toon hamburgerknop op mobiel */
+        }
+    
+        #nav-menu {
+            display: none; /* Begin met verbergen */
+            position: fixed; /* Zorg ervoor dat het menu het scherm bedekt */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* Maak het menu de volledige hoogte */
+            background-color: black;
+            flex-direction: column;
+            padding: 0;
+            z-index: 900;
+            justify-content: flex-start; /* Centreer de inhoud */
+            align-items: center; /* Centreer de inhoud */
+            overflow: auto;
+        }
+    
+        /* Wanneer het menu zichtbaar is */
+        #nav-menu.active {
+            display: flex; /* Toon het menu */
+        }
+    
+        .logo-mobile {
+            display: block;
+            margin: 20px 0; /* Voeg wat marge toe rond het logo */
+            text-align: center; /* Centreer het logo */
+        }
+    
+        /* Layout header */
+        .header-bottom {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px;
+        }
+    
+        .logo {
+            margin-right: 20px 0;
+        }
+    
+        .team-name {
+            color: white;
+            font-size: 18px;
+        }
+    
+        /* Zorg dat navigatie links uitgelijnd is */
+        #nav-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column; /* Zorg voor kolomuitlijning */
+            align-items: center; /* Centreer links */
+        }
+    
+        #nav-menu ul li {
+            width: 100%; /* Volledige breedte */
+            padding: 15px;
+            border-bottom: 1px solid #333;
+        }
+    
+        #nav-menu ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            width: 100%; /* Volledige breedte van de knop */
+            text-align: center; /* Centreer tekst */
+        }
+    
+        .header-top,
+        .header-bottom {
+            height: auto;
+            padding: 10px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    
+        .logo {
+            position: static;
+            top: 0;
+            left: 0;
+            margin-bottom: 10px;
+        }
+    
+        .team-name {
+            font-size: 24px;
+            padding-left: 0;
+            text-align: center;
+            margin-left: 0;
+        }
+    
+    
+        nav {
+            margin-left: 0;
+            padding: 10px 0;
+        }
+    
+        nav ul {
+            flex-direction: column;
+            border-left: none;
+            width: 100%;
+            align-items: center;
+        }
+    
+        nav ul li {
+            border-left: none;
+            width: 100%;
+        }
+    
+        nav ul li:last-child {
+            border-right: none;
+        }
     }
 
-    header {
-        position: relative;
-        z-index: 1000;
-    }
-
-    .desktop-only {
-        display: none;
-        border-right: none;
-    }
-
-    /* Toon de mobiele opties */
-    .mobile-only {
-        display: block;
-    }
-
+/* Standaard desktop stijlen (boven 768px) */
+@media (min-width: 769px) {
     .menu-toggle {
-        display: block; /* Toon hamburgerknop op mobiel */
+        display: none;
     }
 
     #nav-menu {
-        display: none; /* Begin met verbergen */
-        position: fixed; /* Zorg ervoor dat het menu het scherm bedekt */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%; /* Maak het menu de volledige hoogte */
-        background-color: black;
-        flex-direction: column;
-        padding: 0;
-        z-index: 900;
-        justify-content: flex-start; /* Centreer de inhoud */
-        align-items: center; /* Centreer de inhoud */
-        overflow: auto;
-    }
-
-    /* Wanneer het menu zichtbaar is */
-    #nav-menu.active {
-        display: flex; /* Toon het menu */
-    }
-
-    .logo-mobile {
-        display: block;
-        margin: 20px 0; /* Voeg wat marge toe rond het logo */
-        text-align: center; /* Centreer het logo */
-    }
-
-    /* Layout header */
-    .header-bottom {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 10px;
     }
 
-    .logo {
-        margin-right: 20px 0;
+    .players-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-
-    .team-name {
-        color: white;
-        font-size: 18px;
-    }
-
-    /* Zorg dat navigatie links uitgelijnd is */
-    #nav-menu ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column; /* Zorg voor kolomuitlijning */
-        align-items: center; /* Centreer links */
-    }
-
-    #nav-menu ul li {
-        width: 100%; /* Volledige breedte */
-        padding: 15px;
-        border-bottom: 1px solid #333;
-    }
-
-    #nav-menu ul li a {
-        color: white;
-        text-decoration: none;
-        display: block;
-        padding: 10px 20px;
-        width: 100%; /* Volledige breedte van de knop */
-        text-align: center; /* Centreer tekst */
-    }
-
-    
-    .header-top,
-    .header-bottom {
-        height: auto;
-        padding: 10px;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .logo {
-        position: static;
-        top: 0;
-        left: 0;
-        margin-bottom: 10px;
-    }
-
-    .team-name {
-        font-size: 24px;
-        padding-left: 0;
-        text-align: center;
-        margin-left: 0;
-    }
-
-
-    nav {
-        margin-left: 0;
-        padding: 10px 0;
-    }
-
-    nav ul {
-        flex-direction: column;
-        border-left: none;
-        width: 100%;
-        align-items: center;
-    }
-
-    nav ul li {
-        border-left: none;
-        width: 100%;
-    }
-
-    nav ul li:last-child {
-        border-right: none;
-    }
-
-    .hero-image {
-        height: auto;
-    }
-
-    .hero-image img {
-        width: 100%;
-        height: auto;
-    }
-
-    .wedstrijd-container {
-        flex-direction: column;
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    .image-left, .image-right {
-        flex: 0 0 auto;
-    }
-
-    .wedstrijd-box {
-        max-width: 100%;
-        height: auto;
-        margin: 0 10px;
-    }
-
-    .floppersinfo,
-    .floppersinfo2,
-    .floppersinfo3 {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-        text-align: center;
-    }
-
-    .floppersinfo img,
-    .floppersinfo2 img,
-    .floppersinfo3 img {
-        max-width: 100%;
-        margin: 0;
-    }
-
-    .floppersinfo-text,
-    .floppersinfo-text2,
-    .floppersinfo-text3 {
-        max-width: 100%;
-    }
-
-    .floppersinfo-wrapper,
-    .floppersinfo-wrapper2,
-    .floppersinfo-wrapper3 {
-        margin: 0;
-    }
-
 }
+

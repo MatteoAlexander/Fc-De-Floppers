@@ -195,7 +195,16 @@ nav ul li {
 GSM instellingen
 ***********************************************
 */
+/* Verberg desktop-only items standaard */
+.desktop-only {
+    display: block;
+    border-right: 1px solid gray;
+}
 
+/* Verberg mobile-only items standaard */
+.mobile-only {
+    display: none;
+}
 
 .logo-mobile {
     display: none; /* Standaard niet zichtbaar */
@@ -242,6 +251,16 @@ body.menu-open {
         margin: 0;
         height: 100vh; /* Zorg ervoor dat de body de volledige hoogte heeft */
         overflow: auto; /* Voorkom scrollen */
+    }
+
+    .desktop-only {
+        display: none;
+        border-right: none;
+    }
+
+    /* Toon de mobiele opties */
+    .mobile-only {
+        display: block;
     }
 
     header {
@@ -321,10 +340,6 @@ body.menu-open {
         padding: 10px 20px;
         width: 100%; /* Volledige breedte van de knop */
         text-align: center; /* Centreer tekst */
-    }
-
-    #nav-menu ul li a:hover {
-        background-color: #222;
     }
 
     .header-top,
