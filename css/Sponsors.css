@@ -197,8 +197,7 @@ nav ul li {
 
 /* Stijlen voor de rest van de pagina */
 main {
-    padding: 80px 40px; /* Ruimte toegevoegd om de header niet te overlappen */
-    text-align: left;
+    padding: 0px; /* Ruimte toegevoegd om de header niet te overlappen */
     flex: 1;
 }
 
@@ -282,13 +281,6 @@ footer a:hover {
 }
 
 
-.vs {
-    font-size: 30px;
-    font-weight: bold;
-    color: #bbb;
-    margin: 0 20px;
-}
-
 
 
 /*#######################################################################################""
@@ -307,17 +299,6 @@ VASTE WAARDEN
     flex-direction: column; /* Zorg ervoor dat de container verticaal blijft */
 }
 
-h1, h2 {
-    color: white; /* Een donkerdere kleur voor de koppen */
-    font-weight: bold;
-}
-
-
-p {
-    line-height: 1.6;
-    color: white; /* Lichtere kleur voor de paragrafen */
-}
-
 a {
     text-decoration: none;
     color: white;
@@ -330,6 +311,111 @@ a:hover {
 
 h2{
     padding-top: 50px;
+}
+
+/*
+***********************************************
+.bedanking
+***********************************************
+*/
+
+.bedanking {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch; /* Zorgt ervoor dat afbeeldingen en tekst even hoog zijn */
+    padding: 20px 40px;
+    gap: 90px;
+    width: 100%;
+    background-color: #121212; /* Zwarte achtergrond */
+    color: #f4f4f4; /* Witte tekst */
+    margin: 0 auto; /* Zorgt dat de sectie gecentreerd is */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding-top: 100px;
+    padding-bottom: 90px;
+}
+
+.bedanking h2, .bedanking p {
+    margin: 0;
+    text-align: left;
+}
+
+.bedanking h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.bedanking p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.bedanking img {
+    flex: 1; /* Zorgt ervoor dat de afbeelding even groot is als de tekst */
+    max-width: 550px;
+    height: auto; /* Houdt de verhoudingen in stand */
+    object-fit: contain; /* Vul de beschikbare ruimte zonder vervorming */
+    border-radius: 8px;
+    padding-right: 180px;
+    padding-top: 70px;
+    
+}
+
+.bedanking-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 175px;
+}
+
+/* Sponsor1 sectie */
+.sponsor1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch; /* Zorgt ervoor dat afbeeldingen en tekst even hoog zijn */
+    padding: 20px 40px;
+    gap: 90px;
+    width: 100%;
+    background-color: #f0f0f0ee; /* Zwarte achtergrond */
+    color: black; /* Witte tekst */
+    margin: 0 auto; /* Zorgt dat de sectie gecentreerd is */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding-bottom: 100px;
+}
+
+.sponsor1 h2, .sponsor1 p {
+    margin: 0;
+    text-align: left;
+}
+
+.sponsor1 h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.sponsor1 p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.sponsor1 img {
+    flex: 1; /* Zorgt ervoor dat de afbeelding even groot is als de tekst */
+    max-width: 400px;
+    height: auto; /* Houdt de verhoudingen in stand */
+    object-fit: contain; /* Vul de beschikbare ruimte zonder vervorming */
+    border-radius: 8px;
+    padding-left: 150px;
+    padding-top: 100px;
+}
+
+.sponsor1-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 180px;
 }
 
 
@@ -558,6 +644,30 @@ header {
         nav ul li:last-child {
             border-right: none;
         }
+
+        .sponsor1,
+        .bedanking {
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            text-align: center;
+    }
+
+        .sponsor1 img,
+        .bedanking {
+            max-width: 100%;
+            margin: 0;
+    }
+
+        .sponsor1-text,
+        .bedanking {
+            max-width: 100%;
+    }
+
+        .sponsor1-wrapper,
+        .bedanking {
+            margin: 0;
+    }
     }
 
 /* Standaard desktop stijlen (boven 768px) */
