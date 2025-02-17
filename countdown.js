@@ -1,4 +1,4 @@
-var countDownDate = new Date(2024, 11, 3, 22, 0, 0).getTime(); // Oktober is maand 9
+var countDownDate = new Date(2025, 1, 14, 19, 0, 0).getTime(); // Oktober is maand 9
 
 var x = setInterval(function() {
     var now = new Date().getTime();
