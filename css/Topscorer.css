@@ -5,6 +5,10 @@ html, body {
     padding: 0;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -224,37 +228,37 @@ footer {
     margin: 0 auto;    /* Zorgt ervoor dat de container gecentreerd blijft */
 }
 
-.footer-column {
+.footer-column, .footer-columnnav {
     width: 25%;
     text-align: left;
 }
 
-.footer-column h3 {
+.footer-column h3, .footer-columnnav h3{
     font-size: 18px;
     margin-bottom: 10px;
     text-align: left;
 }
 
-.footer-column ul {
+.footer-column ul, .footer-columnnav ul {
     list-style: none;
     padding: 0;
     text-align: left;
 }
 
-.footer-column ul li {
+.footer-column ul li, .footer-columnnav ul li {
     margin-bottom: 8px;
 }
 
-.footer-column ul li a {
+.footer-column ul li a, .footer-columnnav ul li a {
     color: #f4f4f4;
     text-decoration: none;
 }
 
-.footer-column ul li a:hover {
+.footer-column ul li a:hover, .footer-columnnav ul li a:hover {
     text-decoration: underline;
 }
 
-.footer-column p {
+.footer-column p, .footer-columnnav p {
     margin: 0;
     text-align: left;
 }
@@ -616,6 +620,32 @@ header {
         nav ul li:last-child {
             border-right: none;
         }
+
+        .footer-columnnav {
+            display: none; /* Verberg de navigatie-sectie op gsm */
+        }
+    
+        .social-icon {
+            vertical-align: middle; /* Zorgt dat tekst naast het icoon blijft */
+            margin-right: 5px; /* Voegt wat ruimte toe tussen icoon en tekst */
+        }
+    
+        .footer-column h3, 
+        .footer-column p {
+        white-space: nowrap; /* Voorkomt dat de tekst op een nieuwe regel springt */
+        }
+    
+        .footer-column {
+            display: flex;
+            flex-direction: column; /* Stapel de kolommen onder elkaar */
+            padding: 0 20px; /* Voeg gelijke padding links en rechts toe */
+        }
+    
+        .footer-column {
+            width: 100%; /* Zorgt ervoor dat elke kolom de volledige breedte neemt */
+            max-width: 300px; /* Optioneel: Beperk de maximale breedte */
+        }
+    
     }
 
 /* Standaard desktop stijlen (boven 768px) */
