@@ -913,7 +913,8 @@ body.menu-open {
     .footer-column {
         display: flex;
         flex-direction: column; /* Stapel de kolommen onder elkaar */
-        padding: 0 20px; /* Voeg gelijke padding links en rechts toe */
+        padding-left: 11px;
+        column-width: 190px;
     }
 
     .footer-column {

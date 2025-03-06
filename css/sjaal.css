@@ -13,11 +13,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212;
+    background-color: black;
     color: #f4f4f4;
-    min-height: 100vh; /* Zorg ervoor dat de body ten minste de volledige hoogte van het scherm heeft */
+    min-height: 100vh;
     display: flex;
-    flex-direction: column; /* Gebruik flexbox om de elementen binnen de body te positioneren */
+    flex-direction: column;
 }
 
 header {
@@ -226,7 +226,7 @@ main {
     display: flex;
     justify-content: center;  /* Centreer de content horizontaal */
     align-items: center;      /* Centreer de content verticaal */
-    height: 100vh;            /* Zorg dat de main de volledige hoogte van de viewport inneemt */
+    min-height: calc(100vh - 25px); /* Trek de hoogte van de header af */
     background-color: #000;   /* Zwarte achtergrond */
 }
 
@@ -339,12 +339,6 @@ GSM instellingen
     justify-content: space-between;
 }
 
-body {
-    margin: 0;
-    height: auto; /* Laat de hoogte automatisch zijn */
-    overflow: auto; /* Zorg ervoor dat de body kan scrollen */
-}
-
 body.menu-open {
     overflow: hidden; /* Voorkom scrollen als het menu open is */
 }
@@ -368,22 +362,6 @@ body.menu-open {
 }
 
 /* Algemene stijlen */
-html, body {
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #121212;
-    color: #f4f4f4;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
 
 header {
     display: flex;
@@ -493,6 +471,45 @@ header {
         width: 100%;
         text-align: center;
     }
+
+    .team-name {
+        font-size: 20px;  /* Iets kleinere tekst voor mobiel */
+        text-align: center; /* Zorg ervoor dat de tekst gecentreerd is */
+        width: 100%; /* Laat de tekst de volledige breedte innemen */
+        margin-left: 0; /* Verwijder de marge naar links */
+        padding-left: 0; /* Verwijder de padding naar links */
+    }
+
+    .content-container {
+        flex-direction: column; /* Stapel de elementen verticaal */
+        align-items: center; /* Centreer de inhoud */
+        text-align: center; /* Centreer de tekst */
+        border-left: none; /* Verwijder de verticale scheiding */
+    }
+
+    .left-half {
+        width: 100%; /* Laat de afbeelding de volledige breedte innemen */
+        background-color: transparent; /* Optioneel: achtergrond weghalen */
+        padding-top: 100px;
+    }
+
+    .product-image {
+        max-width: 80%; /* Beperkt de breedte van de afbeelding */
+        height: auto;
+    }
+
+    .right-half {
+        width: 100%; /* Laat de tekst de volledige breedte innemen */
+        padding: 20px; /* Minder padding voor mobiel */
+    }
+
+    .product-price{
+        text-align: left;
+    }
+
+    .close-button {
+        display: none;
+    }    
 }
 
 /* Standaard desktop stijlen (boven 768px) */
