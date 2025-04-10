@@ -1,4 +1,3 @@
-/* Algemene stijlen */
 html, body {
     overflow-x: hidden;
     margin: 0;
@@ -81,13 +80,13 @@ nav {
     height: 100%; /* Zorg dat de navigatie de volledige hoogte van de header vult */
 }
 
-nav ul {
+nav ul{
     display: flex;
     height: 100%; /* Zorg ervoor dat de ul de volledige hoogte vult */
     list-style: none;
     padding: 0;
     margin: 0;
-    
+    /*border-left: 1px solid gray; /* Voeg deze regel toe */
 }
 
 /* Zorg ervoor dat elk item de volledige hoogte van de header vult en horizontaal verdeeld is */
@@ -114,6 +113,7 @@ nav ul li a {
     font-style: normal;
     justify-content: center;
 }
+
 
 
 
@@ -162,7 +162,7 @@ nav ul li {
 
 /* Stijl voor dropdown-items */
 .dropdown-menu li {
-    border-bottom: 1px solid gray;
+    border: 1px solid gray;
     text-align: center; /* Zorg dat de tekst gecentreerd blijft */
 }
 
@@ -191,32 +191,14 @@ nav ul li {
 
 /*###################################################*/
 
-/* Hero afbeelding - gestrekt over de volledige breedte zonder bijsnijden */
-.hero-image {
-    overflow: hidden; /* Zorg ervoor dat bijsnijden plaatsvindt */
-    height: calc(110vh); /* Geef een vaste hoogte aan de hero afbeelding, inclusief de 60px voor bijsnijden */
-    position: relative; /* Maak het mogelijk om de afbeelding te positioneren binnen deze container */
-}
-
-.hero-image img {
-    width: 100vw; /* De afbeelding neemt de volledige breedte van het scherm */
-    height: auto; /* Houdt de hoogte proportioneel */
-    object-fit: cover; /* Zorgt ervoor dat de afbeelding proportioneel wordt weergegeven */
-    display: block; /* Verwijder ongewenste witruimte onder de afbeelding */
-    margin: 0; /* Verwijder marges van de afbeelding */
-    padding: 0; /* Verwijder padding van de afbeelding */
-    position: absolute; /* Maak het mogelijk om de afbeelding te verplaatsen */
-    top: 0; /* Standaard top */
-    transition: opacity 0.5s ease; /* Voeg een overgang toe voor de opacity */
-    opacity: 0; /* Begin met een onzichtbare afbeelding */
-}
-
 /* Stijlen voor de rest van de pagina */
 main {
-    padding: 0;
+    padding: 20px;
     text-align: center;
     flex: 1; /* Zorgt ervoor dat het hoofdgedeelte de beschikbare ruimte opvult */
 }
+
+
 
 footer {
     background-color: #333;
@@ -295,355 +277,6 @@ a:hover {
     vertical-align: middle;
 }
 
-/* Pijlen voor de afbeelding wisselaar */
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 50px; /* Pas de grootte van de pijlen aan indien nodig */
-    color: white;
-    cursor: pointer;
-    user-select: none; /* Voorkomt dat de tekst wordt geselecteerd */
-    z-index: 1; /* Zorgt ervoor dat de pijlen boven de afbeelding staan */
-}
-
-.arrow.left {
-    left: 20px; /* Positie van de linkerpijl */
-}
-
-.arrow.right {
-    right: 20px; /* Positie van de rechterpijl */
-}
-
-/* Stijlen voor de wedstrijd-box */
-.wedstrijd-box {
-    flex: 1; /* Zorg ervoor dat de wedstrijd-box de resterende ruimte opvult */
-    background-color: #1e1e1e;
-    color: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 550px;
-    border: 2px solid white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    height: 400px; /* Vaste hoogte voor de wedstrijd-box */
-}
-
-.team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-width: 150px;
-    height: 150px; /* Zorg voor een vaste hoogte voor alle teams zodat ze gelijk staan */
-}
-
-.team img {
-    max-width: 100px;  /* Beperk de maximale breedte van de afbeeldingen */
-    max-height: 100px; /* Beperk de maximale hoogte van de afbeeldingen */
-    object-fit: contain; /* Zorg dat de afbeelding proportioneel blijft */
-    margin-bottom: 10px; /* Wat ruimte tussen de afbeelding en de teamnaam */
-}
-
-.team-left {
-    margin-top: 10px;
-}
-
-.name-right {
-    margin-top: 10px;
-}
-
-.name-left {
-    margin-top: -1px;
-}
-
-.wedstrijd-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    height: 150px; /* Zorg ervoor dat de team-container een vaste hoogte heeft */
-}
-
-.team-name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px; /* Vaste hoogte voor de teamnaam zodat ze altijd gelijk staan */
-}
-
-.vs {
-    font-size: 30px;
-    font-weight: bold;
-    color: #bbb;
-    margin: 0 20px;
-}
-
-.wedstrijd-info {
-    text-align: center;  /* Tekst uitlijnen naar links */
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.5;
-}
-
-.wedstrijd-info p {
-    margin: 5px 0;  /* Voeg wat marges toe tussen de regels */
-}
-
-.wedstrijd-info span {
-    color: #f4f4f4;  /* Rood voor speciale details zoals speeldag */
-}
-
-/* Stijlen voor de wedstrijd-container */
-.wedstrijd-container {
-    display: flex; /* Gebruik flexbox om de afbeeldingen en wedstrijd-box op een rij te zetten */
-    justify-content: center; /* Zorg ervoor dat alles in het midden staat */
-    align-items: center; /* Verticaal centreren van de inhoud */
-    gap: 40px; /* Voeg meer ruimte toe tussen de afbeeldingen en de wedstrijd-box */
-    margin-top: 100px; /* Voeg marge toe aan de bovenkant van de container voor wat ruimte */
-    max-width: 1800px; /* Maximaliseer de breedte van de container */
-    margin-left: auto; /* Center de container horizontaal */
-    margin-right: auto; /* Center de container horizontaal */
-    
-}
-
-/* Aanpassingen voor de afbeeldingen aan de linker en rechterkant */
-.image-left, .image-right {
-    flex: 0 0 200px; /* Vergroot de flex-basis voor de zij-afbeeldingen */
-    text-align: center;
-}
-
-/* Aanpassingen voor de afbeeldingen zelf */
-.image-left img, .image-right img {
-    max-width: 300px; /* Verhoog de maximale breedte van de afbeeldingen */
-    max-height: 300px; /* Verhoog de maximale hoogte van de afbeeldingen */
-    width: auto; /* Behoud de verhoudingen van de afbeeldingen */
-    height: auto;
-    object-fit: contain; /* Zorg ervoor dat de afbeeldingen binnen de container blijven zonder vervormd te worden */
-}
-
-.countdown {
-    position: absolute; /* Zorgt dat het in de wedstrijd-box blijft */
-    bottom: 10px; /* Plaatst het 10px boven de onderkant */
-    right: 10px; /* Plaatst het 10px van de rechterkant */
-    background-color: rgba(0, 0, 0, 0.7); /* Zwarte achtergrond met doorzichtigheid */
-    color: #fff; /* Witte tekstkleur */
-    padding: 10px; /* Ruimte binnenin */
-    border-radius: 5px; /* Ronde hoeken */
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-}
-
-.countdown-timer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px; /* Ruimte rondom de klok */
-    border-radius: 10px; /* Ronde hoeken */
-}
-
-.countdown-item {
-    text-align: center;
-    margin: 0 10px; /* Ruimte tussen de items */
-}
-
-.countdown-number {
-    font-size: 24px; /* Grotere tekstgrootte voor de cijfers */
-    font-weight: bold; /* Vetgedrukte tekst voor cijfers */
-    color: white; /* Kleur van de cijfers */
-}
-
-.countdown-label {
-    font-size: 12px; /* Kleinere tekstgrootte voor de labels onder de cijfers */
-    color: white; /* Kleur van de labels */
-    display: block; /* Zorg ervoor dat de labels op een nieuwe regel staan */
-}
-
-.separator {
-    font-size: 16px; /* Zorg ervoor dat de separator dezelfde grootte heeft als de cijfers */
-    color: white; /* Kleur van de separator */
-    margin: 0 10px; /* Ruimte tussen de separator en de tijdselementen */
-}
-
-/*
-************************************
-deel1
-************************************
-*/
-/* Pas de floppersinfo-container aan om alleen verticale scrollen te gebruiken */
-.floppersinfo {
-    display: flex;
-    justify-content: flex-start; /* Gebruik flex-start in plaats van space-between */
-    align-items: center;
-    padding: 20px 40px;
-    gap: 40px;
-    width: 100%;
-    background-color: #f0f0f0ee;
-    color: #121212;
-    border-radius: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 150px;
-    
-}
-
-/* Extra instellingen voor tekst, afbeelding en paragrafen zoals eerder */
-.floppersinfo h2, .floppersinfo p {
-    margin: 0;
-    text-align: left;
-}
-
-.floppersinfo h2 {
-    margin-bottom: 50px;
-    font-size: 30px;
-}
-
-.floppersinfo p {
-    margin-bottom: 15px;
-    font-size: 16px; /* Pas de grootte aan naar wens, bijv. 18px */
-    line-height: 1.6; /* Zorg voor voldoende ruimte tussen de regels */
-}
-
-.floppersinfo img {
-    max-width: 600px;
-    max-height: 800px;
-    object-fit: contain;
-    margin-right: 150px;
-    margin-bottom: 70px;
-    margin-top: 70px;
-}
-
-.floppersinfo-text {
-    flex: 1;
-    max-width: 50%;
-   
-}
-
-.floppersinfo-wrapper {
-    margin-left: 100px;
-    flex: 1;
-}
-
-/*
-************************************
-deel2
-************************************
-*/
-
-.floppersinfo2 {
-    display: flex;
-    justify-content: flex-start; /* Gebruik flex-start in plaats van space-between */
-    align-items: center;
-    padding: 20px 40px;
-    gap: 80px;
-    width: 100%;
-    background-color: #121212;
-    color: #f4f4f4;
-    border-radius: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 0px;
-}
-
-/* Extra instellingen voor tekst, afbeelding en paragrafen zoals eerder */
-.floppersinfo2 h2, .floppersinfo2 p {
-    margin: 0;
-    text-align: left;
-}
-
-.floppersinfo2 h2 {
-    margin-bottom: 50px;
-    font-size: 30px;
-}
-
-.floppersinfo2 p {
-    margin-bottom: 15px;
-    font-size: 16px; /* Pas de grootte aan naar wens, bijv. 18px */
-    line-height: 1.6; /* Zorg voor voldoende ruimte tussen de regels */
-}
-
-.floppersinfo2 img {
-    max-width: 600px;
-    max-height: 800px;
-    object-fit: contain;
-    margin-left: 120px;
-    margin-right: 110px;
-}
-
-.floppersinfo-text2 {
-    flex: 1;
-    max-width: 50%;
-   
-}
-
-.floppersinfo-wrapper2 {
-    margin-right: 150px;
-    margin-bottom: 70px;
-    margin-top: 70px;
-    flex: 1;
-}
-
-/*
-************************************
-deel3
-************************************
-*/
-.floppersinfo3 {
-    display: flex;
-    justify-content: flex-start; /* Gebruik flex-start in plaats van space-between */
-    align-items: center;
-    padding: 20px 40px;
-    gap: 40px;
-    width: 100%;
-    background-color: #f0f0f0ee;
-    color: #121212;
-    border-radius: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    
-}
-
-/* Extra instellingen voor tekst, afbeelding en paragrafen zoals eerder */
-.floppersinfo3 h2, .floppersinfo3 p {
-    margin: 0;
-    text-align: left;
-}
-
-.floppersinfo3 h2 {
-    margin-bottom: 50px;
-    font-size: 30px;
-}
-
-.floppersinfo3 p {
-    margin-bottom: 15px;
-    font-size: 16px; /* Pas de grootte aan naar wens, bijv. 18px */
-    line-height: 1.6; /* Zorg voor voldoende ruimte tussen de regels */
-}
-
-.floppersinfo3 img {
-    max-width: 600px;
-    max-height: 800px;
-    object-fit: contain;
-    margin-right: 150px;
-    margin-bottom: 70px;
-    margin-top: 70px;
-}
-
-.floppersinfo-text3 {
-    flex: 1;
-    max-width: 50%;
-   
-}
-
-.floppersinfo-wrapper3 {
-    margin-left: 100px;
-    flex: 1;
-}
-
-/*
-***********************************************
-GSM instellingen
-***********************************************
-*/
-
 /* Verberg desktop-only items standaard */
 .desktop-only {
     display: block;
@@ -693,6 +326,164 @@ body.menu-open {
     display: flex; /* Standaard zichtbaar op desktop */
 }
 
+
+/*#############################################*/
+/*MAIN*/
+/*#############################################*/
+
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .titel{
+    padding-top: 85px;
+  }
+
+  .tournament {
+    background: #ffffff3e;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  }
+
+  .tournament img.main-photo {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .goalscorers {
+    margin-top: 1rem;
+  }
+
+  .goalscorers ul {
+    padding-left: 1rem;
+  }
+
+  .goalscorers li {
+    margin-bottom: 0.4rem;
+  }
+
+  .podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+
+  .podium .spot {
+    text-align: center;
+  }
+
+  .spot img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .spot h3 {
+    margin: 0.3rem 0 0.2rem;
+  }
+
+  .spot p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .spot.gold { order: 2; }
+  .spot.silver { order: 1; transform: translateY(10px); }
+  .spot.bronze { order: 3; transform: translateY(20px); }
+
+  .tournament-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .tournament-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .goalscorers {
+    flex: 1;
+  }
+  
+  .photo-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main-photo {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .spot.gold img {
+    border-color: #FFD700; /* goud */
+  }
+  
+  .spot.gold h3, .spot.gold p {
+    color: #FFD700;
+  }
+  
+  /* Zilver: 2de plaats */
+  .spot.silver img {
+    border-color: #C0C0C0; /* zilver */
+  }
+  
+  .spot.silver h3, .spot.silver p {
+    color: #C0C0C0;
+  }
+  
+  /* Brons: 3de plaats */
+  .spot.bronze img {
+    border-color: #CD7F32; /* brons */
+  }
+  
+  .spot.bronze h3, .spot.bronze p {
+    color: #CD7F32;
+  }
+
+  .tournament-progress {
+    font-size: x-large;
+    font-weight: bold;
+    color: #f4f4f4;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+  }
+
+
+/*#############################################*/
+/*GSM*/
+/*#############################################*/
+
+
+
 /* Responsieve aanpassingen voor kleinere schermen */
 @media (max-width: 768px) {
        /* Verbeterde stijlen voor de body */
@@ -700,11 +491,6 @@ body.menu-open {
         margin: 0;
         height: 100vh; /* Zorg ervoor dat de body de volledige hoogte heeft */
         overflow: auto; /* Voorkom scrollen */
-    }
-
-    header {
-        position: relative;
-        z-index: 1000;
     }
 
     .desktop-only {
@@ -715,6 +501,11 @@ body.menu-open {
     /* Toon de mobiele opties */
     .mobile-only {
         display: block;
+    }
+
+    header {
+        position: relative;
+        z-index: 1000;
     }
 
     .menu-toggle {
@@ -790,7 +581,6 @@ body.menu-open {
         text-align: center; /* Centreer tekst */
     }
 
-    
     .header-top,
     .header-bottom {
         height: auto;
@@ -836,59 +626,6 @@ body.menu-open {
         border-right: none;
     }
 
-    .hero-image {
-        height: auto;
-    }
-
-    .hero-image img {
-        width: 100%;
-        height: auto;
-    }
-
-    .wedstrijd-container {
-        flex-direction: column;
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    .image-left, .image-right {
-        flex: 0 0 auto;
-    }
-
-    .wedstrijd-box {
-        max-width: 100%;
-        height: auto;
-        margin: 0 10px;
-    }
-
-    .floppersinfo,
-    .floppersinfo2,
-    .floppersinfo3 {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-        text-align: center;
-    }
-
-    .floppersinfo img,
-    .floppersinfo2 img,
-    .floppersinfo3 img {
-        max-width: 100%;
-        margin: 0;
-    }
-
-    .floppersinfo-text,
-    .floppersinfo-text2,
-    .floppersinfo-text3 {
-        max-width: 100%;
-    }
-
-    .floppersinfo-wrapper,
-    .floppersinfo-wrapper2,
-    .floppersinfo-wrapper3 {
-        margin: 0;
-    }
-
     .footer-columnnav {
         display: none; /* Verberg de navigatie-sectie op gsm */
     }
@@ -906,13 +643,40 @@ body.menu-open {
     .footer-column {
         display: flex;
         flex-direction: column; /* Stapel de kolommen onder elkaar */
-        padding-left: 11px;
-        column-width: 190px;
+        padding: 0 20px; /* Voeg gelijke padding links en rechts toe */
     }
 
     .footer-column {
         width: 100%; /* Zorgt ervoor dat elke kolom de volledige breedte neemt */
         max-width: 300px; /* Optioneel: Beperk de maximale breedte */
     }
+
+    .tournament-content {
+        flex-direction: column;
+      }
+    
+      /* Zorg dat de foto mooi meeschaalt op gsm */
+      .photo-wrapper {
+        width: 100%;
+        margin-top: 1rem;
+      }
+    
+      .main-photo {
+        width: 100%;
+        height: auto; /* Verwijder vaste hoogte zodat hij automatisch schaalt */
+        max-width: 100%;
+      }
+    
+      /* Podium verticaal onder elkaar */
+      .podium {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      /* Correcte volgorde: 1ste bovenaan */
+      .spot.gold { order: 1; transform: none; }
+      .spot.silver { order: 2; transform: none; }
+      .spot.bronze { order: 3; transform: none; }
+    
 
 }
