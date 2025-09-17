@@ -519,6 +519,117 @@ h2{
     max-width: 40%;
 }
 
+/*
+***********************************************
+Brieks
+***********************************************
+*/
+
+.sponsor4 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch; /* Zorgt ervoor dat afbeeldingen en tekst even hoog zijn */
+    padding: 20px 40px;
+    gap: 90px;
+    width: 100%;
+    background-color: #f0f0f0ee; /* Zwarte achtergrond */
+    color: black; /* Witte tekst */
+    margin: 0 auto; /* Zorgt dat de sectie gecentreerd is */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding-bottom: 100px;
+}
+
+.sponsor4 h2, .sponsor4 p {
+    margin: 0;
+    text-align: left;
+}
+
+.sponsor4 h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.sponsor4 p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.sponsor4 img {
+    flex: 1; /* Zorgt ervoor dat de afbeelding even groot is als de tekst */
+    width: 300px !important; /* Groter maken */
+    max-width: none !important; /* Verwijder beperking */
+    height: auto !important; /* Verhouding behouden */
+    object-fit: contain; /* Vul de beschikbare ruimte zonder vervorming */
+    border-radius: 8px;
+    padding-left: 100px;
+    padding-top: 60px;
+}
+
+.sponsor4-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 175px;
+    max-width: 40%;
+}
+
+/*
+***********************************************
+Napoleon
+***********************************************
+*/
+
+.sponsor6 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch; /* Zorgt ervoor dat afbeeldingen en tekst even hoog zijn */
+    padding: 20px 40px;
+    gap: 90px;
+    width: 100%;
+    background-color: #f0f0f0ee; /* Zwarte achtergrond */
+    color: black; /* Witte tekst */
+    margin: 0 auto; /* Zorgt dat de sectie gecentreerd is */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding-bottom: 100px;
+}
+
+.sponsor6 h2, .sponsor6 p {
+    margin: 0;
+    text-align: left;
+}
+
+.sponsor6 h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.sponsor6 p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.sponsor6 img {
+    flex: 1; /* Zorgt ervoor dat de afbeelding even groot is als de tekst */
+    width: 500px !important; /* Groter maken */
+    max-width: none !important; /* Verwijder beperking */
+    height: auto !important; /* Verhouding behouden */
+    object-fit: contain; /* Vul de beschikbare ruimte zonder vervorming */
+    border-radius: 8px;
+    padding-left: 100px;
+    padding-top: 60px;
+}
+
+.sponsor6-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 175px;
+    max-width: 40%;
+}
 
 /*
 ***********************************************
@@ -768,7 +879,7 @@ header {
         .bedanking {
             margin: 0;
     }
-    .bedanking, .sponsor1, .sponsor2, .sponsor3 {
+    .bedanking, .sponsor1, .sponsor2, .sponsor3, .sponsor4, .sponsor6 {
         flex-direction: column; /* Zet elementen onder elkaar */
         align-items: center; /* Centreer de inhoud */
         text-align: center;
@@ -776,12 +887,12 @@ header {
         padding: 20px; /* Zorg voor een consistente padding */
     }
 
-    .bedanking-text, .sponsor1-text, .sponsor2-text, .sponsor3-text {
+    .bedanking-text, .sponsor1-text, .sponsor2-text, .sponsor3-text, .sponsor4-text, .sponsor6-text {
         padding: 0; /* Verwijder overbodige padding */
         max-width: 90%; /* Zorg ervoor dat de tekst niet te breed is */
     }
 
-    .bedanking img, .sponsor1 img, .sponsor2 img, .sponsor3 img {
+    .bedanking img, .sponsor1 img, .sponsor2 img, .sponsor3 img, .sponsor4 img, .sponsor6 img{
         max-width: 90%; /* Zorg dat afbeeldingen goed schalen */
         height: auto; /* Behoud de aspect ratio */
         padding: 0; /* Verwijder overbodige padding */

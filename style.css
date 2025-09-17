@@ -97,6 +97,7 @@ nav ul li {
     justify-content: center;
     height: 100%; /* Zorg dat de li's de volledige hoogte van de header vullen */
     border-left: 1px solid gray;
+    border-right: 1px solid gray;
 }
 
 nav ul li a {
@@ -118,9 +119,7 @@ nav ul li a {
 
 
 /* Voeg een rechter border toe aan het laatste item */
-nav ul li:last-child {
-    border-right: 1px solid gray;
-}
+
 
 /* Hover-effect voor navigatie-items */
 nav ul li:hover {
@@ -347,6 +346,11 @@ a:hover {
 }
 
 .team-left {
+    margin-top: 10px;
+}
+
+/* Keizer karel */
+.team-right {
     margin-top: 10px;
 }
 

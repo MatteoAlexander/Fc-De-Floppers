@@ -336,32 +336,9 @@ h2 {
     margin-bottom: 20px; /* Houd de ondermarge op 20px */
 }
 
-/* Stijlen voor de tabel */
-table {
-    width: 80%; /* Zorg ervoor dat de tabel dezelfde breedte heeft als de titel */
-    max-width: 800px;
-    border-collapse: collapse;
-    margin: 20px auto; /* Zorgt voor ruimte boven en onder en centreert de tabel */
-    padding: 0; /* Verwijder padding zodat de tekst van de tabel uitgelijnd is met de titel */
-}
-
-th, td {
-    border: 1px solid #dddddd; /* Lichte rand */
-    text-align: left; /* Tekst links uitlijnen */
-    padding: 10px; /* Ruimte rond de tekst */
-}
-
-th {
-    background-color: #2c2c2c; /* Donkerder grijs voor de koppen */
-}
-
-/* Optionele stijl voor even rijen */
-tr:nth-child(even) {
-    background-color: #242424; /* Een lichtere schaduw voor even rijen */
-}
 
 .topscorer {
-    font-size: 30px;
+    font-size: 40px;
     color: #ffffff;
     text-align: left; /* Links uitlijnen zodat het op één lijn staat met de tabel */
     margin: 100px auto 30px auto; /* 50px marge bovenaan voor extra ruimte, 20px onderaan */
@@ -370,7 +347,7 @@ tr:nth-child(even) {
 }
 
 .afgelopen {
-    font-size: 25px;
+    font-size: 35px;
     color: #ffffff;
     text-align: left; /* Links uitlijnen zodat het op één lijn staat met de tabel */
     margin: 100px auto 30px auto; /* 50px marge bovenaan voor extra ruimte, 20px onderaan */
@@ -388,6 +365,125 @@ tr:nth-child(even) {
 
 .afgelopen a:hover {
     text-decoration: underline; /* Onderlijning bij hover (optioneel) */
+}
+
+.topscorer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.player-card {
+    display: flex;
+    align-items: stretch;
+    background-color: #f0f0f0ee;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+    border: 2px solid white;
+
+}
+
+.rank-section {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    border-right: 2px solid #ccc;
+    width: 80px;
+    
+}
+
+.rank {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.player-content {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.player-photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #555;
+}
+
+.player-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player-name {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+.goals-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    padding: 0px 30px;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    font-family: system-ui, sans-serif;
+}
+
+.goals-label {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.goals {
+    font-size: 50px;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 25px;
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.goals-value {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.topscorer-list .player-card:nth-child(1) .rank-section {
+    background-color: gold;
+    color: black;
+}
+
+.topscorer-list .player-card:nth-child(2) .rank-section {
+    background-color: silver;
+    color: black;
+}
+
+.topscorer-list .player-card:nth-child(3) .rank-section {
+    background-color: #cd7f32; /* bronskleur */
+    color: white;
 }
 
 /*
@@ -638,6 +734,54 @@ header {
         .footer-column {
             width: 100%; /* Zorgt ervoor dat elke kolom de volledige breedte neemt */
             max-width: 300px; /* Optioneel: Beperk de maximale breedte */
+        }
+
+        .player-card {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    
+        .rank-section {
+            width: 100%;
+            border-right: none;
+            border-bottom: 2px solid #ccc;
+            padding: 10px 0;
+        }
+    
+        .player-content {
+            flex-direction: column;
+            padding: 15px;
+        }
+    
+        .left-section {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    
+        .player-photo {
+            width: 100px;
+            height: 100px;
+        }
+    
+        .player-info {
+            flex-direction: column;
+            gap: 5px;
+        }
+    
+        .player-name {
+            font-size: 22px;
+        }
+    
+        .goals-section {
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 10px;
+        }
+    
+        .goals-label, .goals-value {
+            font-size: 22px;
         }
     
     }

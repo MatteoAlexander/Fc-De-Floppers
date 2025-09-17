@@ -448,7 +448,15 @@ iframe {
     margin-bottom: 110px; /* Voegt 40px ruimte toe onder de iframe */
 }
 
-
+.afgelopen {
+    font-size: 25px;
+    color: #ffffff;
+    text-align: left; /* Links uitlijnen zodat het op één lijn staat met de tabel */
+    margin: 100px auto 30px auto; /* 50px marge bovenaan voor extra ruimte, 20px onderaan */
+    width: 80%; /* Zorg ervoor dat de breedte van de titel gelijk is aan de breedte van de tabel */
+    max-width: 800px; /* Voeg dezelfde max-breedte toe als de tabel */
+    font-weight: bold;
+}
 
 /*
 ***********************************************
